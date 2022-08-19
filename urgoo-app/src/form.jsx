@@ -16,7 +16,12 @@ const Form =()=>{
     const [inputValue, setInputValue] = useState({});
     const [countMan, setCountMan] = useState(0)
     const [countChild, setCountChild] = useState(0)
-
+    const times = ['12:00', '14:00', '17:00', '19:00', '21:00'];
+    const [active, setActive] = useState(times[0]);
+    const handleClick = (event) => {
+        console.log("event",event);
+        event.currentTarget.classList.toggle('active1');
+      };
     return(
         <div className="container">
             <nav>
@@ -47,10 +52,15 @@ const Form =()=>{
                             </div>
                             <p>Цагаа сонгоно уу?*</p>
                                 <div className=".grid-container">
-                                    <button className="timeBtn">12:50</button>
+                                    {times.map(time => (
+                                        <button className={ active===time ? 'active1 ' : ''} onClick={() => {setActive(time)}}>
+                                            {time}
+                                        </button>
+                                    ))}
+                                    {/* <button className="timeBtn">12:50</button>
                                     <button className="timeBtn">2:10</button>
                                     <button className="timeBtn">3:55</button>
-                                    <button className="timeBtn">6:10</button>
+                                    <button className="timeBtn">6:10</button> */}
 
 
                                 </div>
