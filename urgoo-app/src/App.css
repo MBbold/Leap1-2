@@ -171,3 +171,17 @@ p{
   width: 30px;
   height: 30px;
   }
+
+
+
+  .billBtn{
+    padding: 10px;
+    width: 200px;
+    height: 30px;
+    background-color: brown;
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
+    border: none;
+    margin-bottom: 40px;
+  }

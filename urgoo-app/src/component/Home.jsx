@@ -8,6 +8,7 @@ import {
   } from "react-router-dom";
 import { useMoviesDataContext } from "../context/moviesData";
 import { useMovieContext } from "../context/movieData";
+import { useState } from "react";
 const Home = ()=>{
     const {moviesArr, setMoviesArr} = useMoviesDataContext()
     const {movie, setMovie} = useMovieContext()
