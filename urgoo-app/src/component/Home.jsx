@@ -6,8 +6,8 @@ import {
     Link,
     useNavigate
   } from "react-router-dom";
-import { useMoviesDataContext } from "./moviesData";
-import { useMovieContext } from "./movieData";
+import { useMoviesDataContext } from "../context/moviesData";
+import { useMovieContext } from "../context/movieData";
 const Home = ()=>{
     const {moviesArr, setMoviesArr} = useMoviesDataContext()
     const {movie, setMovie} = useMovieContext()

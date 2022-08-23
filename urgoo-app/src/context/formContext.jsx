@@ -1,5 +1,5 @@
 import { createContext, useState, useContext } from "react";
-import formContext from "./data/urgoo.json";
+import formContext from "../data/urgoo.json";
 
 const FormContext = createContext()
 export const FormProvider = (props)=>{

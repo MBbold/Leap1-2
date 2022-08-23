@@ -143,6 +143,31 @@ p{
   cursor: pointer;
 }
 .active1{
-  border: 1px solid black;
+  /* border: 1px solid black; */
   opacity: 0.7;
 }
+.formBtn{
+  display: flex;
+}
+.formBtnLink{
+  padding: 10px;
+  height: 20px;
+  background-color: brown;
+  color: white;
+  text-decoration: none;
+  border: none;
+  margin-right: 20px;
+}
+.tableGrid{
+  display: grid;
+  width: 30%;
+  gap: 10px;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  /* grid-template-rows: 1fr 1fr; */
+  justify-items: center;
+  margin: 20px;
+}
+.tableCheck{
+  width: 30px;
+  height: 30px;
+  }

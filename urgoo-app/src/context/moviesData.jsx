@@ -1,5 +1,5 @@
 import { createContext, useState, useContext } from "react";
-import movieData from "./data/urgoo.json";
+import movieData from "../data/urgoo.json";
 
 const MoviesDataContext = createContext()
 export const MoviesDataProvider = (props)=>{

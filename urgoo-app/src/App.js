@@ -4,12 +4,11 @@ import {
   BrowserRouter as Router,
   Routes,
   Route,
-  Link
 } from "react-router-dom";
-import Home from './Home';
-import { MovieInfo } from './movie';
-import Form from './form';
-import { Table } from './table';
+import Home from './component/Home';
+import { MovieInfo } from './component/movie';
+import Form from './component/form';
+import { Table } from './component/table';
 export default function App() {
   return (
     <Router>
