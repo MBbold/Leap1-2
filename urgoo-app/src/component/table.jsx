@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { signUp } from "../firestore";
 import "../App.css"
 import {
     BrowserRouter as Router,
@@ -49,7 +50,7 @@ export const Table =()=>{
                 {console.log("seat",seat)}
 
             </div>
-            <button className="billBtn">Төлбөр төлөх</button>
+            <button onClick={()=>signUp(userData.Name, userData.Email, userData.Phone, movie.name,userData.Time, userData.Adult + userData.Child, seat, userData.Adult*10000 +userData.Child*5000, console.log("daragdlaa"))} className="billBtn">Төлбөр төлөх</button>
             <Link  className="link2" to="/form">Буцах</Link>
             {/* <button onClick={()=>{console.log("Daragdlaa",movie)}}>Буцах</button> */}
         </div>

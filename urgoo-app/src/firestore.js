@@ -1,5 +1,5 @@
 import { initializeApp } from "firebase/app";
-import { getFirestore, collection, addDoc, getDocs, getDoc, doc, query, where } from "firebase/firestore";
+import { getFirestore, collection, addDoc, getDocs, getDoc, doc, query, where, setDoc, } from "firebase/firestore";
 import { getStorage, ref, uploadBytesResumable, getDownloadURL, } from "firebase/storage";
 
 const firebaseConfig = {
@@ -12,18 +12,37 @@ const firebaseConfig = {
     measurementId: "G-S601Q9EG8L"
   };
 
-console.log("storageRef",storage);
+// console.log("storageRef",storage);
   const app = initializeApp(firebaseConfig);
   const db = getFirestore(app);
 
-  const signUp = async function (Name, Phone, Email) {
-    const userCredential = await createUserWithEmailAndPassword(
-      auth,
-      Name,
-      Phone,
-      Email
-    );
-    return true;
+  const signUp = async function (name, email, phone, movieName, time, ticket, seat, ticketPrice) {
+    try {
+      // const userCredential = await createUserWithEmailAndPassword(
+      //   auth,
+      //   signupEmail,
+      //   signupPassword,
+      //   signupName
+      // );
+      // 1. User ID-iigaa barij awna.
+      // const userUid = userCredential.user.uid;
+  
+      // 2. User ID-iigaaraa shineer uusgesen DOCUMENT COLLECTION-oo FIRESTORE DATABASE dotor hadgalna.
+      const docRef = await addDoc(collection(db, "Urgoo"), {
+        name: name,
+        email:email,
+        phone:phone,
+        movieName: movieName,
+        time: time,
+        ticket:ticket,
+        seat:seat,
+        ticketPrice:ticketPrice,
+      });
+  
+      return true;
+    } catch (error) {
+      return false;
+    }
   };
 
   export { signUp};
