@@ -6,6 +6,7 @@ import reportWebVitals from './reportWebVitals';
 import { MoviesDataProvider } from './context/moviesData';
 import { MovieProvider } from './context/movieData';
 import { UserDataProvider } from './context/UserDataContext';
+import { SeatDataProvider } from './context/SeatContext';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -13,7 +14,9 @@ root.render(
     <MoviesDataProvider>
       <MovieProvider>
         <UserDataProvider>
-          <App />
+          <SeatDataProvider>
+            <App />
+          </SeatDataProvider>
         </UserDataProvider>
       </MovieProvider>
     </MoviesDataProvider>

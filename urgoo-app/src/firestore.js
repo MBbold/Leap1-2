@@ -1,6 +1,7 @@
 import { initializeApp } from "firebase/app";
-import { getFirestore, collection, addDoc, getDocs, getDoc, doc, query, where, setDoc, } from "firebase/firestore";
+import { getFirestore, collection, addDoc, getDocs, getDoc, doc, query, where, setDoc, arrayUnion, updateDoc} from "firebase/firestore";
 import { getStorage, ref, uploadBytesResumable, getDownloadURL, } from "firebase/storage";
+
 
 const firebaseConfig = {
     apiKey: "AIzaSyDs3qO03KHEqlHsxZ8pJ2tw_ECZ0XayAHw",
@@ -16,33 +17,45 @@ const firebaseConfig = {
   const app = initializeApp(firebaseConfig);
   const db = getFirestore(app);
 
+
   const signUp = async function (name, email, phone, movieName, time, ticket, seat, ticketPrice) {
     try {
-      // const userCredential = await createUserWithEmailAndPassword(
-      //   auth,
-      //   signupEmail,
-      //   signupPassword,
-      //   signupName
-      // );
-      // 1. User ID-iigaa barij awna.
-      // const userUid = userCredential.user.uid;
-  
-      // 2. User ID-iigaaraa shineer uusgesen DOCUMENT COLLECTION-oo FIRESTORE DATABASE dotor hadgalna.
-      const docRef = await addDoc(collection(db, "Urgoo"), {
-        name: name,
-        email:email,
-        phone:phone,
-        movieName: movieName,
-        time: time,
-        ticket:ticket,
-        seat:seat,
-        ticketPrice:ticketPrice,
+      const docId = localStorage.getItem("docId")
+      const docRef =  doc(db, "Urgoo", docId);
+      await updateDoc(docRef, {
+          Users: arrayUnion({
+          name: name,
+          email:email,
+          phone:phone,
+          movieName: movieName,
+          time: time,
+          ticket:ticket,
+          ticketPrice:ticketPrice,
+        }),
+        Seat:arrayUnion(...seat)
       });
-  
+
       return true;
     } catch (error) {
       return false;
     }
   };
+  const getUserDataFromFireStore = async function () {
+    // user buh data-g tataj awah
 
-  export { signUp};
+    const docData = await collection(db, "Urgoo");
+    let queryData = await getDocs(docData);
+    let orderSeat = [];
+
+    queryData.forEach((doc) => {
+      let userData = doc.data();
+      console.log("userData",userData);
+      let docId = doc.id
+      orderSeat = userData.Seat
+      localStorage.setItem("docId", JSON.stringify(docId));
+    });
+    return orderSeat;
+
+  };
+  // getUserDataFromFireStore()
+  export { signUp, getUserDataFromFireStore};

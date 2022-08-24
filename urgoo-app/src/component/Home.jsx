@@ -9,6 +9,7 @@ import {
 import { useMoviesDataContext } from "../context/moviesData";
 import { useMovieContext } from "../context/movieData";
 import { useState } from "react";
+import { getUserDataFromFireStore } from "../firestore";
 const Home = ()=>{
     const {moviesArr, setMoviesArr} = useMoviesDataContext()
     const {movie, setMovie} = useMovieContext()
@@ -47,4 +48,5 @@ const Home = ()=>{
         </div>
     )
 }
+getUserDataFromFireStore()
 export default Home
