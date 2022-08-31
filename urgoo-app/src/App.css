@@ -2,6 +2,10 @@
   margin: 0;
   padding: 0;
 }
+.App{
+  width: 100vw;
+  height: 100vh;
+}
 body{
   background-color:antiquewhite
 }
@@ -115,7 +119,7 @@ nav{
   height: 50%;
 }
 .infoImage{
-  /* width:100%;  */
+  width:80%; 
   height:100%;
   object-fit: cover;
   border-radius: 20px;
