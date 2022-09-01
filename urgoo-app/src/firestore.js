@@ -1,17 +1,9 @@
 import { initializeApp } from "firebase/app";
 import { getFirestore, collection, addDoc, getDocs, getDoc, doc, query, where, setDoc, arrayUnion, updateDoc} from "firebase/firestore";
 import { getStorage, ref, uploadBytesResumable, getDownloadURL, } from "firebase/storage";
+import { firebaseConfig } from "./firebaseKey";
 
 
-const firebaseConfig = {
-    apiKey: "AIzaSyDs3qO03KHEqlHsxZ8pJ2tw_ECZ0XayAHw",
-    authDomain: "mbproject-0810.firebaseapp.com",
-    projectId: "mbproject-0810",
-    storageBucket: "mbproject-0810.appspot.com",
-    messagingSenderId: "906173000504",
-    appId: "1:906173000504:web:45f873f57cbdcfbcb0efcd",
-    measurementId: "G-S601Q9EG8L"
-  };
 
 // console.log("storageRef",storage);
   const app = initializeApp(firebaseConfig);
@@ -40,6 +32,52 @@ const firebaseConfig = {
       return false;
     }
   };
+  const getData = async ()=>{
+    const docref = collection(db, "Users")
+    const queryData = await getDocs(docref);
+    console.log("queryData", queryData);
+    return queryData
+  }
+  const getFirebase = async (phone)=>{
+    try {
+      const usersData = await getData();
+      usersData.forEach((doc)=>{
+        const getUser = doc.data()
+        if(getUser.phone === +phone){
+          console.log("Bi mun bna");
+        }else{
+          alert("Ta burtgelgu bna")
+        }
+      })
+      // if(usersData.docs === 0){
+      //   addFirebase()
+      //   alert("hey bi shalgaj bna")
+      // } else {
+      //   updateFirebase()
+      // }
+    } catch (error) {
+      
+    }
+  }
+  // const addFirebase = async ()=>{
+  //   const docref = collection(db, "Users")
+  //   await addDoc(docref, {
+  //     name:"MB",
+  //     phone: 80797850
+  //   })
+  // }
+  // const updateFirebase = async()=>{
+  //   const docref = collection(db, "Users")
+  //   const queryData = await getDocs(docref);
+  //   await updateDoc(queryData.docs, {
+  //     name:"bold",
+  //     phone: 80797850
+  //   })
+  // }
+
+
+
+  // getFirebase()
   const getUserDataFromFireStore = async function () {
     // user buh data-g tataj awah
 
@@ -58,4 +96,4 @@ const firebaseConfig = {
 
   };
   // getUserDataFromFireStore()
-  export { signUp, getUserDataFromFireStore};
+  export { signUp, getUserDataFromFireStore, getFirebase};

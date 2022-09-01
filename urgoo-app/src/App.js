@@ -8,7 +8,7 @@ import {
 import Home from './component/Home';
 import { MovieInfo } from './component/movie';
 import Form from './component/form';
-import { Table } from './component/table';
+import { Table } from './component/Table';
 import Navbar from './component/Navbar';
 import { Login } from './component/Login';
 export default function App() {
