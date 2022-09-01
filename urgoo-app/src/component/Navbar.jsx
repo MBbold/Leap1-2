@@ -13,36 +13,60 @@ const Navbar = () => {
 
   return (
     <div className='header'>
-      <h1>MB Cinema</h1>
-      <div className='labelsContainer'>
-        <ul>
-          <Link id='home' to='/'>
-            <li className={'/' === '/' ? 'active' : ''}>
-              Эхлэл
+      <div className='navTop'>
+        <div className='navTopContainer'>
+          <ul>
+            <li>
+              <a href="https://www.facebook.com/">
+                <img src="https://www.urgoo.mn/Images/mn.png" alt="" />
+              </a>
             </li>
-          </Link>
-          <Link id='time' to='/movie'>
-            <li className={'/movie' === '/movie' ? 'active' : ''}>
-              Цаг захиалга
+            <li>
+              <a href="https://www.facebook.com/">
+                <img src="https://www.urgoo.mn/Images/mn.png" alt="" />
+              </a>
             </li>
-          </Link>
-          <Link id='seat' to='/seat'>
-            <li className={'/table' === '/table' ? 'active' : ''}>
-              Суудал захиалга
+            <li>
+              <a href="https://www.facebook.com/">
+                <img src="https://www.urgoo.mn/Images/mn.png" alt="" />
+              </a>
             </li>
-          </Link>
-          <Link id='login' to='/'>
-            <li className={'/' === '/' ? 'active' : ''}>
-              {isLoggedIn ? 'Нэвтэрсэн' : 'Нэвтрэх'}
-            </li>
-          </Link>
-          {isLoggedIn && (
-            <button id='modal' onClick={() => setModalClose(false)}>
-              Профайл
-            </button>
-          )}
-        </ul>
+          </ul>
+        </div>
       </div>
+      <div  className='nav'>
+        <div className='logo'>MB IMAX</div>
+        <div className='labelsContainer'>
+          <ul>
+            <Link id='home' to='/home'>
+              <li className={'/' === '/' ? 'active' : ''}>
+                Эхлэл
+              </li>
+            </Link>
+            <Link id='time' to='/movie'>
+              <li className={'/movie' === '/movie' ? 'active' : ''}>
+                Цаг захиалга
+              </li>
+            </Link>
+            <Link id='seat' to='/seat'>
+              <li className={'/table' === '/table' ? 'active' : ''}>
+                Суудал захиалга
+              </li>
+            </Link>
+            <Link id='login' to='/'>
+              <li className={'/' === '/' ? 'active' : ''}>
+                {isLoggedIn ? 'Нэвтэрсэн' : 'Нэвтрэх'}
+              </li>
+            </Link>
+            {isLoggedIn && (
+              <button id='modal' onClick={() => setModalClose(false)}>
+                Профайл
+              </button>
+            )}
+          </ul>
+        </div>
+      </div>
+      
     </div>
   );
 };

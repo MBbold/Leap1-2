@@ -96,6 +96,12 @@ body{
   height: 50px;
   border: none;
 }
+button{
+  background-color: transparent;
+  border: none;
+  color: white;
+  font-size: 600;
+}
 
 
 

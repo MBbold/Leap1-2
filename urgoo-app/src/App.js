@@ -6,9 +6,9 @@ import {
   Route,
 } from "react-router-dom";
 import Home from './component/Home';
-import { MovieInfo } from './component/Movie';
+import { MovieInfo } from './component/movie';
 import Form from './component/form';
-import { Table } from './component/Table';
+import { Table } from './component/table';
 import Navbar from './component/Navbar';
 import { Login } from './component/Login';
 export default function App() {

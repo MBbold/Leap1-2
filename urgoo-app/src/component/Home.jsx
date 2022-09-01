@@ -35,15 +35,16 @@ const Home = ()=>{
                             <p>{el.name}</p>
                             <p>{el.age}</p>
                         </div>
-                        <div className="divLink">
+                        <div className="divLink" onClick={() => {setMovie({...el}); navigate("/movie")  }}>
+                            Цагийн хуваарь {'>'} Дэлгэрэнгүй
                             {/* <Link to="/movie" className="link"> Цагийн хуваарь {'>'} Дэлгэрэнгүй </Link> */}
-                            <button onClick={() => {setMovie({...el}); navigate("/movie")  }}> Цагийн хуваарь {'>'} Дэлгэрэнгүй </button>
+                            {/* <button onClick={() => {setMovie({...el}); navigate("/movie")  }}> Цагийн хуваарь {'>'} Дэлгэрэнгүй </button> */}
                         </div>
                     </div>
                 </div>)}
             </div>
-            <Link to="/movie">Дэлгэрэнгүй</Link>
-            <Link to="/">Буцах</Link>
+            {/* <Link to="/movie">Дэлгэрэнгүй</Link>
+            <Link to="/Home">Буцах</Link> */}
 
         </div>
     )
