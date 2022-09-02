@@ -10,7 +10,7 @@ import { SeatDataProvider } from './context/SeatContext';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.StrictMode>
+  // <React.StrictMode>
     <MoviesDataProvider>
       <MovieProvider>
         <UserDataProvider>
@@ -20,7 +20,7 @@ root.render(
         </UserDataProvider>
       </MovieProvider>
     </MoviesDataProvider>
-  </React.StrictMode>
+  // </React.StrictMode>
 );
 
 // If you want to start measuring performance in your app, pass a function

@@ -29,7 +29,7 @@ export const  MovieInfo =()=>{
                         Мэдээлэл: {movie.information}
                     </p> */}
                     <div>
-                        {/* <Link state={movie.state} className="link2" to="/form">Захиалга</Link> */}
+                        <Link state={movie.state} className="link2" to="/form">Захиалга</Link>
                         <Link className="link2" to="/Home"> Буцах</Link>
                     </div>
                 </div>
