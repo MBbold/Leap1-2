@@ -1,4 +1,5 @@
 import './App.css';
+import './Style/Style.css'
 import React from "react";
 import {
   BrowserRouter as Router,
@@ -11,6 +12,7 @@ import Form from './component/form';
 import { Table } from './component/Table';
 import Navbar from './component/Navbar';
 import { Login } from './component/Login';
+// import "./Style/Style.scss"
 export default function App() {
   return (
     <Router>

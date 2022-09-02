@@ -1,0 +1,66 @@
+@import '_color.scss';
+$font-stack: Helvetica, sans-serif;
+$pointer: pointer;
+@mixin BtnSize($pro1,$pro2){
+    width:$pro1;
+    height:$pro2;
+};
+@mixin margin($pro1){
+    margin:$pro1;
+};
+@mixin padding($pro1,$pro2){
+    padding: $pro1 $pro2;
+};
+body{
+    button{
+        @include margin(10px);
+        // @include BtnSize(100px, 30px);
+        @include padding(10px, 30px);
+        border: none;
+        color: $textColor;
+        cursor: $pointer;
+    }
+}
+.btnClass{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+button:active{
+    transform: scaleX(1.1);
+}
+.primary{
+    background-color: $backgroundColor;
+}
+.secondary{
+    border: 1px solid $backgroundColor;
+    background-color: transparent;
+    color: $backgroundColor;
+}
+.disable{
+    background-color: none;
+}
+.success{
+    background-color: $backgroundColor-secondary;
+}
+.delete{
+    background-color: $backgroundColor-red;
+}
+.shape{
+    div{
+        @include BtnSize(50px, 50px);
+        @include margin(10px);
+        border-bottom-left-radius: 50%;
+        
+    }
+}
+
+@each $key, $color in $colors {
+    .box-#{$key}{
+        display: inline-block;
+        font-family: "icon font";
+        content: $color;
+        background-color: $color;
+    }
+}
