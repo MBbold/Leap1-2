@@ -16,22 +16,22 @@ export const Login = () =>{
     const navigate = useNavigate();
 
     const userPhoneIsRegisteredChecked =()=>{
-        const inputPhoneNumber = +phoneNumberRef.current.value
-        console.log(userDataObj, "userDataObj");
+        const inputPhoneNumber = +phoneNumberRef.current.value;
+        const inputPhoneNumber1 = phoneNumberRef.current.value;
+        let phoneRegex = /^[0-9]{8}$/;
         const registeredPhone = userDataObj.filter((e)=> e.phone === inputPhoneNumber)
-        console.log(registeredPhone,"registeredPhone");
-        if(inputPhoneNumber.length === 8){
+        if(inputPhoneNumber.toString().length === 8 && phoneRegex.test(inputPhoneNumber.toString())){
             if(registeredPhone.length > 0){
                 alert("Таны утас бүртгэлтэй байна")
+                setIsLogin(true)
             } else{
                 alert("Амжилттай бүртгүүллээ")
                 setUserDataSignUp(userNameRef.current.value, inputPhoneNumber)
                 getDataUsers()
-                console.log(userDataObj, "userDataObj Амжилттай");
-    
             }
         }else{
             alert("Утасны дугаар буруу байна")
+
         }
         
     }
@@ -46,6 +46,22 @@ export const Login = () =>{
             alert("Таны дугаар бүртгэлгүй байна")
         }
       };
+      
+    //   const validatePhoneHandler = (phoneInput) => {
+    //     let phoneRegex = /^[0-9]{8}$/;
+    
+    //     if (phoneInput.trim().length === 8 && phoneRegex.test(phoneInput.trim())) {
+    //       return true;
+    //     } else return false;
+    //   };
+
+
+
+
+
+
+
+
     return(
         <div className="loginContainer">
             {isLogin ? <div className="loginPage">
@@ -70,7 +86,7 @@ export const Login = () =>{
                     <button className="loginBtn" onClick={()=>{setIsLogin(true); getLoggedUserData(); }}>Нэвтрэх </button>
                     <button className="loginBtn" onClick={()=>setIsLogin(false)}>Бүртгүүлэх </button>
                     </div> : <div className="containerBtn center">
-                        <button className="loginBtn" onClick={()=> {userPhoneIsRegisteredChecked(); setIsLogin(true)}}>Бүртгүүлэх </button>
+                        <button className="loginBtn" onClick={()=> {userPhoneIsRegisteredChecked()}}>Бүртгүүлэх </button>
                     </div>
             }
             

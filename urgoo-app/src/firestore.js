@@ -22,7 +22,6 @@ import { firebaseConfig } from "./firebaseKey";
           item.push(doc.data())
         })
         setUserDataObj(item)
-        console.log("userDataObj", userDataObj);
       }
       
     }
@@ -49,9 +48,6 @@ import { firebaseConfig } from "./firebaseKey";
     // },[]);
   }
   
-
-  
-
 
 
 
