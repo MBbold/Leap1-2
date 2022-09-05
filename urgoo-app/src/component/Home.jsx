@@ -15,7 +15,7 @@ const Home = ()=>{
     const {movie, setMovie} = useMovieContext()
     const navigate = useNavigate();
     return(
-        <div className="container">
+        <div className="homeContainer">
             <h1>Дэлгэцнээ гарч буй кинонууд</h1>
             <div className="grid-container">
                 {/* <div className="grid-item">

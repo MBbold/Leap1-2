@@ -7,19 +7,25 @@ import { MoviesDataProvider } from './context/moviesData';
 import { MovieProvider } from './context/movieData';
 import { UserDataProvider } from './context/UserDataContext';
 import { SeatDataProvider } from './context/SeatContext';
-
+import { UsersDataProvider } from './context/UsersDataContext';
+import { LoggedUserProvider } from './context/LoggedUserContext';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   // <React.StrictMode>
-    <MoviesDataProvider>
-      <MovieProvider>
-        <UserDataProvider>
-          <SeatDataProvider>
-            <App />
-          </SeatDataProvider>
-        </UserDataProvider>
-      </MovieProvider>
-    </MoviesDataProvider>
+  <UsersDataProvider>
+    <LoggedUserProvider>
+      <MoviesDataProvider>
+        <MovieProvider>
+          <UserDataProvider>
+            <SeatDataProvider>
+              <App />
+            </SeatDataProvider>
+          </UserDataProvider>
+        </MovieProvider>
+      </MoviesDataProvider>
+    </LoggedUserProvider>
+  </UsersDataProvider>
+    
   // </React.StrictMode>
 );
 

@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
 import '../Style/NavbarStyle.css'
+import { useLoggedUserContext } from '../context/LoggedUserContext';
 // import UserModal from './LoggedUserDataModal';
 // import { usePathNameContext } from '../provider/PathNameContext';
 // import { useLoggedInContext } from '../provider/LoggedInContext';
@@ -8,8 +9,10 @@ import '../Style/NavbarStyle.css'
 
 const Navbar = () => {
 //   const { pathName } = usePathNameContext();
-  const [isLoggedIn,  setLoggedIn]   = useState(true);
+  const [isLoggedIn,  setLoggedIn]   = useState(false);
   const [modalClose, setModalClose ]  = useState(true);
+  const {isLoggedUser, setIsLoggedUser} = useLoggedUserContext();
+
 
   return (
     <div className='header'>
@@ -54,15 +57,17 @@ const Navbar = () => {
               </li>
             </Link>
             <Link id='login' to='/'>
-              <li className={'/' === '/' ? 'active' : ''}>
-                {isLoggedIn ? 'Нэвтэрсэн' : 'Нэвтрэх'}
-              </li>
+              {!isLoggedUser ? <li className='active'>
+                {/* {isLoggedUser ? 'Нэвтэрсэн' : 'Нэвтрэх'} */}
+                Нэвтрэх
+              </li>: ""}
             </Link>
-            {isLoggedIn && (
-              <button id='modal' onClick={() => setModalClose(false)}>
+            <Link id='Profile' to='/Profile'>
+              {isLoggedUser ? <li className='active'>
+                {/* {isLoggedUser ? 'Нэвтэрсэн' : 'Нэвтрэх'} */}
                 Профайл
-              </button>
-            )}
+              </li>: ""}
+            </Link>
           </ul>
         </div>
       </div>

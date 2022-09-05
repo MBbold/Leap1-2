@@ -46,7 +46,14 @@
   );  
 }
 .active{
-
+  
+}
+.disable{
+  color: rgb(0, 0, 0);
+  background-color: aliceblue;
+  /* background-color: transparent; */
+  cursor:no-drop;
+  pointer-events: none;
 }
 .labelsContainer{
   width: 100%;

@@ -1,8 +1,9 @@
 import { initializeApp } from "firebase/app";
-import { getFirestore, collection, addDoc, getDocs, getDoc, doc, query, where, setDoc, arrayUnion, updateDoc} from "firebase/firestore";
-import { getStorage, ref, uploadBytesResumable, getDownloadURL, } from "firebase/storage";
+import { getFirestore, collection, addDoc, getDocs,  doc, arrayUnion, updateDoc} from "firebase/firestore";
+// import { getStorage, ref, uploadBytesResumable, getDownloadURL, } from "firebase/storage";
 import { useEffect, useState } from "react";
 import { firebaseConfig } from "./firebaseKey";
+import { useUsersDataContext } from "./context/UsersDataContext";
 
 
 
@@ -12,10 +13,11 @@ import { firebaseConfig } from "./firebaseKey";
 
   const useGetDataFromFire = () => {
     const [userDataObj, setUserDataObj] = useState([]);
+    const { setUsersData} = useUsersDataContext();
     const getDataUsers = async ()=>{
       const docref = collection(db, "Users")
       const queryData = await getDocs(docref);
-      // setfirebaseUsersData(queryData);
+      setUsersData([...queryData.docs])
       const item = [];
       if(queryData){
         queryData.docs.forEach((doc)=>{
@@ -23,7 +25,6 @@ import { firebaseConfig } from "./firebaseKey";
         })
         setUserDataObj(item)
       }
-      
     }
     useEffect(()=>{
       getDataUsers();
@@ -42,10 +43,6 @@ import { firebaseConfig } from "./firebaseKey";
       })
     }
     setDataUsers();
-    
-    // useEffect(()=>{
-    //   getDataUsers();
-    // },[]);
   }
   
 

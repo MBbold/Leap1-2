@@ -1,4 +1,4 @@
-import "../App.css"
+import "../Style/Movie.css"
 import {
     BrowserRouter as Router,
     Link,
@@ -13,10 +13,10 @@ export const  MovieInfo =()=>{
         <div className="container">
             <div className="infoContainer">
                 <div className="infoTitle">
-                  {movie ? <img src={movie.profile} alt="" className="infoImage" /> : <img src={img} alt="" className="infoImage" />}  
+                  {movie ? <img src={movie.profile} alt="" className="movieInfoImage" /> : <img src={img} alt="" className="movieInfoImage" />}  
                 </div>
                 <div className="infoTitle">
-                    {movie ? <p>Дэлгэцнээ гарах:{movie.date}</p> : <p>Дэлгэцнээ гарах: </p>}
+                    {movie ? <p>Дэлгэцнээ гарах: {movie.date}</p> : <p>Дэлгэцнээ гарах: </p>}
                     {/* <p>Дэлгэцнээ гарах:{movie.date}</p> */}
                     {movie ? <p>{movie.age} | {movie.time}</p> : <p>none</p>}
 

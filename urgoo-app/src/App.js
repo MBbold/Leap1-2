@@ -12,6 +12,7 @@ import Form from './component/form';
 import { Table } from './component/Table';
 import Navbar from './component/Navbar';
 import { Login } from './component/Login';
+import { Profile } from './component/Profile';
 // import "./Style/Style.scss"
 export default function App() {
   return (
@@ -28,6 +29,8 @@ export default function App() {
             <Route path="/form" element={<Form />}>
             </Route>
             <Route path="/table" element={<Table />}>
+            </Route>
+            <Route path="/profile" element={<Profile />}>
             </Route>
           </Routes>
       </div>

@@ -1,0 +1,77 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.formContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+}
+.movieContainer{
+    display: flex;
+    justify-content: space-around;
+    width: 50%;
+    margin-top: 50px;
+}
+.movieImage{
+    width: 50%;
+}
+.movieForm{
+    width: 50%;
+}
+.formContainer p{
+    color: #FFFF;
+}
+.addBtn{
+    width: 70px;
+    height: 50px;
+    background-color: rgb(243, 43, 8);
+    color: white;
+    border: none;
+  }
+  button{
+    background-color: transparent;
+    border: none;
+    color: white;
+    font-size: 600;
+  }
+  .movieTimes{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .btnDiv{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: auto;
+  }
+  .formInput{
+    /* style={{width:'200px', height:'30px', borderRadius:'50px', border:'1px solid black', margin:'10px'}} */
+    width: 100%;
+    padding: 5px 0;
+    margin: 5px 0;
+    height: 30px;
+  }
+  .movieInputBtn{
+    width: 100%;
+    height: 50px;
+    border: none;
+  }
+  .movieBtn{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+  }
+  .movieBtnLink{
+    padding: 10px;
+    height: 20px;
+    background-color: brown;
+    color: white;
+    text-decoration: none;
+    border: none;
+  }
