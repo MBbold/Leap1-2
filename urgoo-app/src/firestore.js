@@ -4,6 +4,7 @@ import { getFirestore, collection, addDoc, getDocs,  doc, arrayUnion, updateDoc}
 import { useEffect, useState } from "react";
 import { firebaseConfig } from "./firebaseKey";
 import { useUsersDataContext } from "./context/UsersDataContext";
+import { useUserDataContext } from "./context/UserDataContext";
 
 
 
@@ -45,7 +46,27 @@ import { useUsersDataContext } from "./context/UsersDataContext";
     setDataUsers();
   }
   
+const useUpdateUserData = () =>{
+  console.log("Starting...");
+  const {userData} = useUserDataContext();
 
+  const UpdateData = async ()=>{
+  console.log("Starting...");
+  const userId = userData.userId
+try {
+  const docRef = doc(db, "Urgoo", userId);
+  console.log("docRef", docRef);
+
+  await updateDoc(docRef, {
+    userId:"bi bna"
+  })
+} catch (error) {
+  
+}
+  
+  }
+  return {UpdateData}
+}
 
 
 
@@ -143,4 +164,4 @@ import { useUsersDataContext } from "./context/UsersDataContext";
 
   };
   // getUserDataFromFireStore()
-  export { signUp, getUserDataFromFireStore, useGetDataFromFire, setUserDataSignUp};
+  export { signUp, getUserDataFromFireStore, useGetDataFromFire, setUserDataSignUp, useUpdateUserData};

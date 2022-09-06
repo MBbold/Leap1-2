@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { signUp, getUserDataFromFireStore } from "../firestore";
+import { signUp, getUserDataFromFireStore, useUpdateUserData } from "../firestore";
 import "../App.css"
 import {
     BrowserRouter as Router,
@@ -18,7 +18,7 @@ export const Table =()=>{
     const {userData, setuserData} = useUserDataContext()
     const [seat, setSeat] = useState([])
     const [orderSeatData, setOrderSeatData] = useState([])
-
+    const {UpdateData} = useUpdateUserData();
     const count = 0
     const getSeatOrderData = async ()=>{
        let seatOrderData = await getUserDataFromFireStore()
@@ -54,9 +54,9 @@ export const Table =()=>{
                     }
                     )}
             </div>
-            <div style={{display:'flex', flexDirection:'column'}}>
+            <div style={{display:'flex', flexDirection:'column', color:'white'}}>
                 <div style={{display:'flex'}}>
-                    <p style={{fontWeight:'500'}}>НЭР:</p><p>{userData.Name}</p>
+                    <p style={{fontWeight:'500'}}>НЭР:</p><p>{userData.name}</p>
                 </div>
                 <div style={{display:'flex'}}>
                     <p style={{fontWeight:'500'}}>КИНОНЫ НЭР:</p><p>{movie.name}</p>
@@ -65,18 +65,18 @@ export const Table =()=>{
                     <p style={{fontWeight:'500'}}>ҮЗВЭРИЙН ЦАГ:</p><p>{userData.Time}  PM</p>
                 </div>
                 <div style={{display:'flex'}}>
-                    <p style={{fontWeight:'500'}}>ТАСАЛБАР:</p><p>{userData.Adult + userData.Child}</p>
+                    <p style={{fontWeight:'500'}}>ТАСАЛБАР:</p><p>{userData.adult + userData.child}</p>
                 </div>
                 <div style={{display:'flex'}}>
                     <p style={{fontWeight:'500'}}>Суудал:</p>{seat.map((el)=><p>{el}</p>)}
                 </div>
                 <div style={{display:'flex'}}>
-                    <p style={{fontWeight:'500'}}>ТАСАЛБАРЫН ҮНЭ:</p><p>{userData.Adult*10000 +userData.Child*5000}</p>
+                    <p style={{fontWeight:'500'}}>ТАСАЛБАРЫН ҮНЭ:</p><p>{userData.adult*10000 +userData.child*5000}</p>
                 </div>
                 {console.log("seat",seat)}
 
             </div>
-            <button onClick={()=>signUp(userData.Name, userData.Email, userData.Phone, movie.name,userData.Time, userData.Adult + userData.Child, seat, userData.Adult*10000 +userData.Child*5000, console.log("daragdlaa"))} className="billBtn">Төлбөр төлөх</button>
+            <button onClick={()=>UpdateData()} className="billBtn">Төлбөр төлөх</button>
             <Link  className="link2" to="/form">Буцах</Link>
         </div>
 

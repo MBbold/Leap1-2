@@ -2,6 +2,7 @@ import "../Style/Form.css"
 import {
     BrowserRouter as Router,
     Link,
+    useNavigate,
   } from "react-router-dom";
   import { useState } from "react";
   import { useMovieContext } from "../context/movieData";
@@ -15,6 +16,7 @@ const Form =()=>{
     const times = ['12:00', '14:00', '17:00', '19:00', '21:00','23:00'];
     const [active, setActive] = useState(times[0]);
     const {userData, setuserData} = useUserDataContext()
+    const navigate = useNavigate();
     return(
         
         <div className="container">
@@ -48,10 +50,18 @@ const Form =()=>{
                                     ))}
                                 </div>
                             <div className="movieBtn">
-                                <Link className="movieBtnLink" to="/table" onClick={()=>{console.log("inputValue", inputValue)
+                                <button className="movieBtnLink" onClick={()=>{
                                                 if(inputValue.Email.indexOf("@")<1 || (inputValue.Email.indexOf(".") - inputValue.Email.indexOf("@") <2)){alert("email zuw buglu")}else{
-                                                    {setuserData({...inputValue, Adult:countAdult, Child:countChild, Time:active})}
-                                                }}}> Үргэлжлүүлэх</Link>
+                                                    {setuserData({...userData, ...inputValue, adult:countAdult, child:countChild, time:active, movieName:movie.name})}
+                                                }
+                                                navigate('/table')
+                                                }}> 
+                                Үргэлжлүүлэх
+                                </button>
+                                {/* <Link className="movieBtnLink" to="/table" onClick={()=>{console.log("userData", userData)
+                                                if(inputValue.Email.indexOf("@")<1 || (inputValue.Email.indexOf(".") - inputValue.Email.indexOf("@") <2)){alert("email zuw buglu")}else{
+                                                    {setuserData({...userData, ...inputValue, adult:countAdult, child:countChild, time:active})}
+                                                }}}> Үргэлжлүүлэх</Link> */}
                                 {/* <input className="link2" onClick={()=> { console.log("inputValue", inputValue)
                                     if(Object.keys(inputValue).length===0 || Object.keys(inputValue).length<2)
                                         { alert('Buren buglu')}
