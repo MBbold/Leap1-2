@@ -17,9 +17,11 @@ import AssignmentOutlinedIcon from '@mui/icons-material/AssignmentOutlined';
 import SignalCellularAltIcon from '@mui/icons-material/SignalCellularAlt';
 import SettingsIcon from '@mui/icons-material/Settings';
 import RestaurantMenuRoundedIcon from '@mui/icons-material/RestaurantMenuRounded';
-import { LogoSvg } from './logo';
+import { LogoSvg } from './Logo';
 import { useState } from 'react';
 import { Avatar } from '@mui/material';
+// import {Link} from '@mui/material';
+import {Link} from 'react-router';
 
 const drawerWidth = 258;
 let menuIcons = [<AssignmentOutlinedIcon/>, <SignalCellularAltIcon/>, <SettingsIcon/>, <RestaurantMenuRoundedIcon/>]
@@ -32,7 +34,7 @@ export const NavBar = ()=>{
                 position="fixed"
                 sx={{ width: `calc(100% - ${drawerWidth}px)`, ml: `${drawerWidth}px`}}
             >
-        <Toolbar sx={{backgroundColor:'#FFF', color:'#000',}}>
+        <Toolbar sx={{backgroundColor:'#FFF', color:'#000', display:'flex', justifyContent:'space-between'}}>
           <Typography variant="h6" noWrap component="div">
             Захиалга
           </Typography>
@@ -63,13 +65,15 @@ export const NavBar = ()=>{
             <LogoSvg />
         </Typography>
         <List sx={{color:'#FFFF'}}>
-          {['Захиалга', 'График', 'Тохиргоо', 'Меню'].map((text, index) => (
+          {['Order', 'График', 'Тохиргоо', 'Меню'].map((text, index) => (
             <ListItem key={text} disablePadding >
               <ListItemButton>
                 <ListItemIcon sx={{color:'#FFFF'}}>
                   {menuIcons[index]}
                 </ListItemIcon>
-                <ListItemText primary={text} />
+                {/* <ListItemText primary={text} /> */}
+                <Link style={{textDecoration:'none',color:'white'}} to={`/${text}`}>{text} </Link>
+                {/* <Link  href={`/${text}`} underline="none" sx={{color:'white'}}>{text}</Link> */}
               </ListItemButton>
             </ListItem>
           ))}
