@@ -8,10 +8,12 @@ import Typography from '@mui/material/Typography';
 import InputBase from '@mui/material/InputBase';
 import MenuIcon from '@mui/icons-material/Menu';
 import SearchIcon from '@mui/icons-material/Search';
-import { Button } from '@mui/material';
+import { Button, Modal } from '@mui/material';
 import { AddButton } from './AddButton';
 import ImageList from '@mui/material/ImageList';
 import ImageListItem from '@mui/material/ImageListItem';
+import ClearOutlinedIcon from '@mui/icons-material/ClearOutlined';
+
 
 const itemData = [
     {
@@ -84,21 +86,36 @@ const Search = styled('div')(({ theme }) => ({
     fontWeight:'400',
     letterSpacing:'-0.408px',
   }));
-
+  const btnColor = {
+    color:'#A0A2A8'
+  }
+  const style = {
+    position: 'absolute',
+    top: 50,
+    left: 288,
+    // transform: 'translate(-50%, -50%)',
+    width: 864,
+    height: 1936,
+    bgcolor: 'background.paper',
+    borderRadius: 8,
+    // border: '2px solid #000',
+    // boxShadow: 24,
+    // pt: 2,
+    // px: 4,
+    // pb: 3,
+  };
 export const FoodMenu =()=>{
+  const [open, setOpen] = React.useState(false);
+  const handleOpen = () => {
+    setOpen(true);
+  };
+  const handleClose = () => {
+    setOpen(false);
+  };
     return(
         <Box sx={{ flexGrow: 1, }}>
             <AppBar position="static" sx={{backgroundColor:'#FFFF', color:'#000723'}}>
                 <Toolbar>
-                {/* <IconButton
-                    size="large"
-                    edge="start"
-                    color="inherit"
-                    aria-label="open drawer"
-                    sx={{ mr: 2 }}
-                >
-                    <MenuIcon />
-                </IconButton> */}
                 <Typography
                     variant="body1"
                     noWrap
@@ -113,22 +130,38 @@ export const FoodMenu =()=>{
                     inputProps={{ 'aria-label': 'search' }}
                     />
                 </Search>
-                <Button variant='outlined' sx={{padding: '3px 0px 3px 0px', width:'150px',marginLeft:'10px', height:'32px',border:'1px solid rgba(0, 7, 35, 0.08)', borderRadius:'8px', color:'#000', fontSize:'12px'}} > <AddButton/> &nbsp; &nbsp;&nbsp; Хоол нэмэх</Button>
-                {/* <AddButton /> */}
+                <Button onClick={handleOpen} variant='outlined' sx={{padding: '3px 0px 3px 0px', width:'150px',marginLeft:'10px', height:'32px',border:'1px solid rgba(0, 7, 35, 0.08)', borderRadius:'8px', color:'#000', fontSize:'12px'}} > <AddButton/> &nbsp; &nbsp;&nbsp; Хоол нэмэх</Button>
+                  
                 </Toolbar>
             </AppBar>
-            <ImageList sx={{ width: 500, height: 450 }} cols={3} rowHeight={164}>
-                {itemData.map((item) => (
-                    <ImageListItem key={item.img}>
-                    <img
-                        src={`${item.img}?w=164&h=164&fit=crop&auto=format`}
-                        srcSet={`${item.img}?w=164&h=164&fit=crop&auto=format&dpr=2 2x`}
-                        alt={item.title}
-                        loading="lazy"
-                    />
-                    </ImageListItem>
-                ))}
-                </ImageList>
+            <Modal
+                    open={open}
+                    onClose={handleClose}
+                    aria-labelledby="parent-modal-title"
+                    aria-describedby="parent-modal-description"
+                  >
+                    <Box sx={{ ...style}}>
+                      <Box mt={2} sx={{display:'flex', justifyContent:'space-between', margin:'10px 10px'}}>
+                        <ClearOutlinedIcon/>
+                        <Typography fontFamily={'Raleway'}>
+                          Хоол нэмэх
+                        </Typography>
+                        <Button variant='contained' color='btnColor'>Хадгалах</Button>
+                      </Box>
+                    </Box>
+                  </Modal>
+                <ImageList sx={{ width: 500, height: 450 }} cols={3} rowHeight={164}>
+                  {itemData.map((item) => (
+                      <ImageListItem key={item.img}>
+                      <img
+                          src={`${item.img}?w=164&h=164&fit=crop&auto=format`}
+                          srcSet={`${item.img}?w=164&h=164&fit=crop&auto=format&dpr=2 2x`}
+                          alt={item.title}
+                          loading="lazy"
+                      />
+                      </ImageListItem>
+                  ))}
+                  </ImageList>
         </Box>
     )
 }
