@@ -20,14 +20,27 @@ import RestaurantMenuRoundedIcon from '@mui/icons-material/RestaurantMenuRounded
 import { LogoSvg } from './Logo';
 import { useState } from 'react';
 import { Avatar } from '@mui/material';
-// import {Link} from '@mui/material';
-import {Link} from 'react-router';
+import { Order } from './Order';
+import {
+    BrowserRouter as Router,
+    Routes,
+    Route,
+    Link
+  } from "react-router-dom";
+import { FoodMenu } from './Menu';
+import { Graphic } from './Graphic';
+import { Configuration } from './Settings';
+
 
 const drawerWidth = 258;
-let menuIcons = [<AssignmentOutlinedIcon/>, <SignalCellularAltIcon/>, <SettingsIcon/>, <RestaurantMenuRoundedIcon/>]
 export const NavBar = ()=>{
-    const [count, setCount]=useState(0)
+let menuIcons = [<AssignmentOutlinedIcon/>, <SignalCellularAltIcon/>, <SettingsIcon/>, <RestaurantMenuRoundedIcon/>]
+let sideBarItems = [{name:'Захиалга', pathName:'order'},
+                    {name:'График', pathName:'graphic'}, 
+                    {name:'Тохиргоо', pathName:'configuration'}, 
+                    {name:'Меню', pathName:'menu'}]
     return(
+        <Router>
         <Box sx={{ display: 'flex' }}>
             <CssBaseline />
             <AppBar
@@ -47,6 +60,12 @@ export const NavBar = ()=>{
             sx={{ width: 24, height: 24 }}
             />
         </Toolbar>
+            <Routes>
+                <Route path='/order' element={<Order/>}/>
+                <Route path='/graphic' element={<Graphic/>}/>
+                <Route path='/configuration' element={<Configuration/>}/>
+                <Route path='/menu' element={<FoodMenu/>}/>
+            </Routes>
       </AppBar>
       <Drawer
         sx={{
@@ -65,21 +84,20 @@ export const NavBar = ()=>{
             <LogoSvg />
         </Typography>
         <List sx={{color:'#FFFF'}}>
-          {['Order', 'График', 'Тохиргоо', 'Меню'].map((text, index) => (
-            <ListItem key={text} disablePadding >
+          {sideBarItems.map((text, index) => (
+            <ListItem key={text.name} disablePadding >
               <ListItemButton>
                 <ListItemIcon sx={{color:'#FFFF'}}>
                   {menuIcons[index]}
                 </ListItemIcon>
-                {/* <ListItemText primary={text} /> */}
-                <Link style={{textDecoration:'none',color:'white'}} to={`/${text}`}>{text} </Link>
-                {/* <Link  href={`/${text}`} underline="none" sx={{color:'white'}}>{text}</Link> */}
+                <Link style={{textDecoration:'none',color:'white'}} to={`/${text.pathName}`}>{text.name} </Link>
               </ListItemButton>
             </ListItem>
           ))}
         </List>
       </Drawer>
-      
+
     </Box>
+    </Router>
     )
 }
