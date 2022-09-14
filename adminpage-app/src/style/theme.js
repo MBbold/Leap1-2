@@ -7,8 +7,17 @@ import { useMemo } from 'react';
 export function CustomTheme({ children }) {
     const Theme = useMemo(() => createTheme({
         palette: {
+            white:{
+                main:'#FFF',
+                light:'#F5F5F7',
+                dark:'#A0A2A8'
+            },
+            dark:{
+                main:'#000',
+                light:'#222'
+            },
             primary: {
-                main: '#000',
+                main: '#fff',
                 light: '#fff'
             },
             secondary: {
@@ -16,7 +25,14 @@ export function CustomTheme({ children }) {
                 main: '#0044ff',
                 // contrastText: '#ffcc00',
             },
+            addFoodBtn:{
+                main:'#F5F5F7'
+            },
+            addIcon:{
+                main:'#66B60F'
+            }
         },
+        padding:{},
         breakpoints: {
             values: {
                 xs: 0,
@@ -26,6 +42,7 @@ export function CustomTheme({ children }) {
                 xl: 1536,
             },
         },
+
     }), []);
     return (
         <ThemeProvider theme={Theme}>

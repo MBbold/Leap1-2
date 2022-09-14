@@ -118,49 +118,51 @@ const App = () => {
     [theme.breakpoints.down("md")]: {
       backgroundColor: theme.palette.secondary.light
     },
-    color: theme.palette.primary.light
-    // [theme.breakpoints.down("dm")]: {
-    //   backgroundColor: theme.palette.primary,
-    // },
+    color: theme.palette.primary,
+    [theme.breakpoints.up("md")]: {
+      backgroundColor: theme.palette.secondary.contrastText,
+    },
     // [theme.breakpoints.up("dm")]: {
     //   backgroundColor: theme.palette.secondary,
     // },
   }))
 
   return (
-    <Mydiv>
-      <Typography>down(md)</Typography>
-      <Typography>up(md)</Typography>
-      <Typography>up(lg)</Typography>
+    // <Mydiv>
+      // <CustomTheme sx={{}}>
+      // <Typography>down(md)</Typography>
+      // <Typography>up(md)</Typography>
+      // <Typography>up(lg)</Typography>
+      // </CustomTheme>
 
-    </Mydiv>
-    // <CustomTheme>
-    //     <div>
-    //       <Button sx={{color:'primary.light', backgroundColor:'secondary.light'}}> Start </Button>
-    //       {/* <div>
-    //         <h1>{time}s</h1>
-    //         <Button color="success" variant="contained" onClick={() => logic("start")}>Start</Button>
-    //         <Button color="error" variant="outlined" onClick={() => logic("stop")}>Pause</Button>
-    //         <Button color="warning" variant="contained" onClick={() => logic("reset")}>Reset</Button>
-    //       </div>
-    //       <br />
-    //       <form>
-    //         <label>Your number:</label>
-    //         <Input
-    //         color="secondary"
-    //           type="number"
-    //           value={selectedNum}
-    //           onChange={(event) => {
-    //             setSelectedNum(event.target.value);
-    //           }}
-    //         />
-    //       </form>
-    //       <span style={{ fontWeight: "600" }}>
-    //         There are {memoiValue.length} prime(s) between 1 and {selectedNum}:{" "}
-    //       </span>
-    //       <span>{memoiValue.join(", ")}</span> */}
-    //     </div>
-    // </CustomTheme>
+    // {/* </Mydiv> */}
+    <CustomTheme>
+        <div>
+          <Button sx={{color:'primary.light', backgroundColor:'secondary.contrastText',}}> Start </Button>
+          {/* <div>
+            <h1>{time}s</h1>
+            <Button color="success" variant="contained" onClick={() => logic("start")}>Start</Button>
+            <Button color="error" variant="outlined" onClick={() => logic("stop")}>Pause</Button>
+            <Button color="warning" variant="contained" onClick={() => logic("reset")}>Reset</Button>
+          </div>
+          <br />
+          <form>
+            <label>Your number:</label>
+            <Input
+            color="secondary"
+              type="number"
+              value={selectedNum}
+              onChange={(event) => {
+                setSelectedNum(event.target.value);
+              }}
+            />
+          </form>
+          <span style={{ fontWeight: "600" }}>
+            There are {memoiValue.length} prime(s) between 1 and {selectedNum}:{" "}
+          </span>
+          <span>{memoiValue.join(", ")}</span> */}
+        </div>
+    </CustomTheme>
 
   );
 };

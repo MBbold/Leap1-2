@@ -15,6 +15,8 @@ import ImageList from "@mui/material/ImageList";
 import ImageListItem from "@mui/material/ImageListItem";
 import ClearOutlinedIcon from "@mui/icons-material/ClearOutlined";
 import { height, spacing, width } from "@mui/system";
+import AddIcon from '@mui/icons-material/Add';
+import { CustomTheme } from "../style/theme";
 
 const itemData = [
   {
@@ -69,11 +71,11 @@ const itemData = [
 const timeSlots = ['Цагаан хоол', 'Цавуулаггүй', 'Хөнгөн хоол', 'Халуун ногоотой', 'Хүнд хоол']
 const Search = styled("div")(({ theme }) => ({
   position: "relative",
-  borderRadius: theme.shape.borderRadius,
-  backgroundColor: alpha(theme.palette.common.white, 0.15),
-  "&:hover": {
-    backgroundColor: alpha(theme.palette.common.white, 0.25),
-  },
+  // borderRadius: theme.shape.borderRadius,
+  // backgroundColor: alpha(theme.palette.common.white, 0.15),
+  // "&:hover": {
+  //   backgroundColor: alpha(theme.palette.common.white, 0.25),
+  // },
   marginLeft: 0,
   width: "100%",
   [theme.breakpoints.up("sm")]: {
@@ -119,43 +121,35 @@ export const FoodMenu = () => {
         position="static"
         sx={{ backgroundColor: "#FFFF", color: "#000723" }}
       >
-        <Toolbar>
+        <Toolbar sx={{display:'flex', alignItems:'center'}}>
           <Typography
             variant="body1"
             noWrap
             component="div"
-            sx={{ flexGrow: 1, display: { xs: "none", sm: "block" } }}
+            sx={{ flex: 1, display: { xs: "none", sm: "block" },  }}
           >
             Хоолны сав
           </Typography>
-          <Search
-            sx={{
-              border: "1px solid rgba(0, 7, 35, 0.08)",
-              borderRadius: "8px",
-            }}
-          >
-            <StyledInputBase
-              placeholder="Хайлт"
-              inputProps={{ "aria-label": "search" }}
-            />
-          </Search>
-          <Button
-            onClick={handleOpen}
-            variant="outlined"
-            sx={{
-              padding: "3px 0px 3px 0px",
-              width: "150px",
-              marginLeft: "10px",
-              height: "32px",
-              border: "1px solid rgba(0, 7, 35, 0.08)",
-              borderRadius: "8px",
-              color: "#000",
-              fontSize: "12px",
-            }}
-          >
-            {" "}
-            <AddButton /> &nbsp; &nbsp;&nbsp; Хоол нэмэх
-          </Button>
+          <Box sx={{flex: 1, display:'flex', justifyContent:'space-around',}}>
+            <Search
+              sx={{
+                backgroundColor:'white.light',
+                borderRadius: "8px",
+              }}
+            >
+              <StyledInputBase
+                placeholder="Хайлт"
+                inputProps={{ "aria-label": "search" }}
+              />
+            </Search>
+            <Button
+              onClick={handleOpen}
+              variant="contained"
+              startIcon={<AddIcon sx={{color:'addIcon.main'}}/>}
+            >
+              Хоол нэмэх
+            </Button>
+          </Box>
         </Toolbar>
       </AppBar>
 
@@ -184,7 +178,7 @@ export const FoodMenu = () => {
                 >
                   Хоол нэмэх
                 </Typography>
-                <Button variant="contained">Хадгалах</Button>
+                <Button variant="contained" sx={{backgroundColor:'white.dark', color:'white.main', fontSize:14}}>Хадгалах</Button>
             </Box>
             <Divider />
             <Box sx={{ display: "flex", justifyContent: "space-around", margin:'20px'}}>
@@ -211,6 +205,7 @@ export const FoodMenu = () => {
                     border: "1px solid #A0A2A8",
                     borderRadius: "6px",
                     padding: "2px 16px 2px 16px",
+                    width:'100%'
                   }}
                 ></InputBase>
                 <Typography>Дэлгэрэнгүй</Typography>
@@ -219,31 +214,35 @@ export const FoodMenu = () => {
                   sx={{
                     border: "1px solid #A0A2A8",
                     borderRadius: "6px",
-                    padding: "2px 16px 2px 16px",
+                    padding: "2px 16px 40px 16px",
+                    width:'100%',
+                    // height:'80px'
                   }}
                 ></InputBase>
-                <Box sx={{ display: "flex", justifyContent: "space-between"}}>
-                  <Box>
+                <Box sx={{ display: "flex", }}>
+                  <Box sx={{flex:1, }}>
                     <Typography>Хоолны үнэ</Typography>
                       <InputBase
                         placeholder="₮ Энд бичнэ үү"
                         type="number"
-                        
+                        size="medium"
                         sx={{
                           border: "1px solid #A0A2A8",
                           borderRadius: "6px",
-                          padding: "2px 16px 2px 16px",
+                          padding: "3px 16px 3px 16px",
+                          width:'90%'
+                          
                         }}
                     ><Typography>$</Typography></InputBase>
                   </Box>
-                  <Box>
+                  <Box sx={{flex:1}}>
                     <Typography>Төрөл</Typography>
                     {/* <Autocomplete></Autocomplete> */}
                     <Autocomplete
                       id="options-food-type"
                       size="small"
                       options={timeSlots}
-                      sx={{ width: 150 }}
+                      sx={{ width: "100%" }}
                       renderInput={(params) => <TextField {...params} label="Төрөлгүй" />}
                     />
                   </Box>
@@ -261,9 +260,28 @@ export const FoodMenu = () => {
                 }}
               >
                 <Typography>Орц, найрлага</Typography>
-                <Button variant="contained" color='secondary'>Орц нэмэх</Button>
+                <Button variant="contained" sx={{backgroundColor:"addFoodBtn.main", color:'dark.main'}} startIcon={<AddIcon sx={{color:'addIcon.main'}}/>}>Орц нэмэх</Button>
+            </Box>
+            <Box sx={{display:'flex'}}>
+              <Box sx={{flex:1}}>
+                <img src="" alt="" />
+                <Typography>Сармис</Typography>
+                    <InputBase
+                      placeholder="Энд бичнэ үү"
+                      sx={{
+                        border: "1px solid #A0A2A8",
+                        borderRadius: "6px",
+                        padding: "2px 16px 2px 16px",
+                        width:'100%'
+                      }}
+                    ></InputBase>
+              </Box>
+              <Box sx={{flex:1}}>
+              
+              </Box>
             </Box>
           </Box>
+          
         </>
       </Modal>
 

@@ -21,6 +21,7 @@ import { LogoSvg } from './Logo';
 import { useState } from 'react';
 import { Avatar } from '@mui/material';
 import { Order } from './Order';
+import { CustomTheme } from '../style/theme';
 import {
     BrowserRouter as Router,
     Routes,
@@ -48,8 +49,9 @@ let sideBarItems = [{name:'Захиалга', pathName:'order'},
                 position="fixed"
                 sx={{ width: `calc(100% - ${drawerWidth}px)`, ml: `${drawerWidth}px`}}
             >
-        <Toolbar sx={{backgroundColor:'#FFF', color:'#000', display:'flex', justifyContent:'space-between'}}>
-          <Typography variant="h6" noWrap component="div">
+        <Toolbar sx={{backgroundColor:'white.main', color:'dark.main', display:'flex', justifyContent:'space-between'}}>
+          <Typography variant="h6" noWrap component="div" fontFamily={'Raleway'} fontStyle='normal'>
+            <p style={{fontFamily:'arial', fontStyle:''}}>Захиалга</p>
             Захиалга
           </Typography>
           <Typography variant="body1" noWrap component="div">
@@ -84,14 +86,14 @@ let sideBarItems = [{name:'Захиалга', pathName:'order'},
         <Typography sx={{display:'flex', width:'100%', height:'100px', alignItems:'center', justifyContent:'center'}}>
             <LogoSvg />
         </Typography>
-        <List sx={{color:'#FFFF'}}>
+        <List sx={{color:'white.main'}}>
           {sideBarItems.map((text, index) => (
             <ListItem key={text.name} disablePadding >
               <ListItemButton>
-                <ListItemIcon sx={{color:'primary.light'}}>
+                <ListItemIcon sx={{color:'white.main'}}>
                   {menuIcons[index]}
                 </ListItemIcon>
-                <Link style={{textDecoration:'none',color:'white'}} to={`/${text.pathName}`}>{text.name} </Link>
+                <Link style={{textDecoration:'none', color:'white'}} to={`/${text.pathName}`}>{text.name} </Link>
               </ListItemButton>
             </ListItem>
           ))}
