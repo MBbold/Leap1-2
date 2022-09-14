@@ -30,6 +30,7 @@ import {
 import { FoodMenu } from './Menu';
 import { Graphic } from './Graphic';
 import { Configuration } from './Settings';
+import _ from 'lodash'
 
 
 const drawerWidth = 258;
@@ -87,13 +88,14 @@ let sideBarItems = [{name:'Захиалга', pathName:'order'},
           {sideBarItems.map((text, index) => (
             <ListItem key={text.name} disablePadding >
               <ListItemButton>
-                <ListItemIcon sx={{color:'#FFFF'}}>
+                <ListItemIcon sx={{color:'primary.light'}}>
                   {menuIcons[index]}
                 </ListItemIcon>
                 <Link style={{textDecoration:'none',color:'white'}} to={`/${text.pathName}`}>{text.name} </Link>
               </ListItemButton>
             </ListItem>
           ))}
+          
         </List>
       </Drawer>
 

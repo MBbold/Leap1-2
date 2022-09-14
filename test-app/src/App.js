@@ -117,7 +117,8 @@ const App = () => {
     padding: theme.spacing(1),
     [theme.breakpoints.down("md")]: {
       backgroundColor: theme.palette.secondary.light
-    }
+    },
+    color: theme.palette.primary.light
     // [theme.breakpoints.down("dm")]: {
     //   backgroundColor: theme.palette.primary,
     // },
