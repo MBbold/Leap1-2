@@ -3,7 +3,9 @@ import { Box } from "@mui/system";
 import { useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import { useAuth } from "../contexts/AuthContext";
-import { getLogIn } from "../firebase/firebaseConfig";
+import { getSignUp } from "../firebase/firebaseConfig";
+import { NavBar } from "./Navbar";
+
 const style = {
   width: "30%",
   height: "auto",
@@ -19,40 +21,43 @@ const styleInput = {
   borderRadius: "6px",
   width: "100%",
 };
-export const Login = () => {
+export const SingUp = () => {
   const [isLogin, setIsLogin] = useState(true);
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
+
+
   const emailRef = useRef();
   const passwordRef = useRef();
   const passwordConfirmRef = useRef();
-  const { logIn } = useAuth();
+  const { signUp, currentUser } = useAuth();
 
-
-
-  async function handleSignIn (e){
-    // e.preventDefault()
-    console.log("Starting")
-    try{
+  const handleSignUp =(e)=>{
+    e.preventDefault()
+    if(passwordRef.current.value!==passwordConfirmRef.current.value){
+      return setError("Password do not match")
+    }
+    
       setError('')
-      setLoading(true)
-      await getLogIn(emailRef.current.value, passwordRef.current.value)
-    }
-    catch{
-      setError("Failed to sign in")
-    }
-    setLoading(false)
+      // setLoading(true)
+      getSignUp(emailRef.current.value, passwordRef.current.value)
+    // catch{
+    //   setError("Failed to create an account")
+    //   console.log("aldaa")
+
+    // }
+    // setLoading(false)
   }
 
   return (
     <Box sx={{ ...style }}>
-      <Typography variant="h3"  sx={{ textAlign: "center",}}>
-        Log In
+      <Typography variant="h2" sx={{ textAlign: "center",}}>
+        Sign Up
       </Typography>
       <Box>
         {/* {currentUser.email} */}
         {error && <Alert variant="danger">{error}</Alert>}
-        <Typography sx={{...margintop}}>Email</Typography>
+        <Typography sx={{ ...margintop }}>Email</Typography>
         <TextField
           sx={{ ...styleInput }}
           id="outlined-basic"
@@ -60,7 +65,7 @@ export const Login = () => {
           variant="outlined"
           inputRef={emailRef}
         />
-        <Typography sx={{ ...margintop}}>Password</Typography>
+        <Typography sx={{ ...margintop }}>Password</Typography>
         <TextField
           sx={{ ...styleInput }}
           type="password"
@@ -69,11 +74,22 @@ export const Login = () => {
           variant="outlined"
           inputRef={passwordRef}
         />
+        <Typography sx={{ ...margintop }}>Password Confirmation</Typography>
+
+        <TextField
+          sx={{ ...styleInput }}
+          type="password"
+          id="outlined-basic"
+          label="Password Confirmation"
+          variant="outlined"
+          inputRef={passwordConfirmRef}
+        />
       </Box>
-      <Button sx={{width:'100%', marginTop:"20px" }} variant="contained" color="secondary" onClick={()=>handleSignIn()} >
-        Нэвтрэх
+      <Button sx={{width:'100%', marginTop:"20px" }} color='secondary' variant="contained" onClick={handleSignUp}>
+        Бүртгүүлэх
       </Button>
-      <Typography sx={{textAlign: "center", marginTop:2}}>Need an account? <Link to="/signup">SignUp</Link></Typography>
+      <Typography sx={{textAlign: "center", marginTop:2}}>Already have an account? <Link to="/">LogIn</Link></Typography>
+
     </Box>
   );
 };
