@@ -6,22 +6,16 @@ import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
 import List from '@mui/material/List';
 import Typography from '@mui/material/Typography';
-import Divider from '@mui/material/Divider';
 import ListItem from '@mui/material/ListItem';
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemIcon from '@mui/material/ListItemIcon';
-import ListItemText from '@mui/material/ListItemText';
-import InboxIcon from '@mui/icons-material/MoveToInbox';
-import MailIcon from '@mui/icons-material/Mail';
 import AssignmentOutlinedIcon from '@mui/icons-material/AssignmentOutlined';
 import SignalCellularAltIcon from '@mui/icons-material/SignalCellularAlt';
 import SettingsIcon from '@mui/icons-material/Settings';
 import RestaurantMenuRoundedIcon from '@mui/icons-material/RestaurantMenuRounded';
-import { LogoSvg } from './Logo';
-import { useState } from 'react';
+import { LogoSvg } from '../component/Logo';
 import { Avatar } from '@mui/material';
 import { Order } from './Order';
-import { CustomTheme } from '../style/theme';
 import {
     BrowserRouter as Router,
     Routes,
@@ -31,7 +25,6 @@ import {
 import { FoodMenu } from './Menu';
 import { Graphic } from './Graphic';
 import { Configuration } from './Settings';
-import _ from 'lodash'
 
 
 const drawerWidth = 258;
@@ -97,7 +90,6 @@ let sideBarItems = [{name:'Захиалга', pathName:'order'},
               </ListItemButton>
             </ListItem>
           ))}
-          
         </List>
       </Drawer>
 

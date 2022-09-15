@@ -1,6 +1,4 @@
-import { styled } from '@mui/material/styles'
-import { NavBar } from './component/Navbar';
-import { Order } from "./component/Order";
+import { Login } from './pages/Login';
 import { CustomTheme } from './style/theme';
 
 
@@ -9,9 +7,9 @@ function App() {
 
   return (
     <CustomTheme>
-      <NavBar/>
+      <Login />
     </CustomTheme>
-    
+
   );
 }
 

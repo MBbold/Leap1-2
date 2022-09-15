@@ -2,8 +2,6 @@ import { createTheme, ThemeProvider } from '@mui/material/styles'
 import { useMemo } from 'react';
 
 
-
-
 export function CustomTheme({ children }) {
     const Theme = useMemo(() => createTheme({
         palette: {
