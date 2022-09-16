@@ -1,0 +1,333 @@
+[debug] [2022-09-16T03:57:41.515Z] ----------------------------------------------------------------------
+[debug] [2022-09-16T03:57:41.516Z] Command:       /usr/local/bin/node /usr/local/bin/firebase emulators:start
+[debug] [2022-09-16T03:57:41.516Z] CLI Version:   11.0.0
+[debug] [2022-09-16T03:57:41.516Z] Platform:      darwin
+[debug] [2022-09-16T03:57:41.516Z] Node Version:  v16.16.0
+[debug] [2022-09-16T03:57:41.517Z] Time:          Fri Sep 16 2022 11:57:41 GMT+0800 (Ulaanbaatar Standard Time)
+[debug] [2022-09-16T03:57:41.517Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2022-09-16T03:57:41.546Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2022-09-16T03:57:41.546Z] > authorizing via signed-in user (mbold81@gmail.com)
+[debug] [2022-09-16T03:57:41.668Z] java version "18.0.2.1" 2022-08-18
+
+[debug] [2022-09-16T03:57:41.669Z] Java(TM) SE Runtime Environment (build 18.0.2.1+1-1)
+Java HotSpot(TM) 64-Bit Server VM (build 18.0.2.1+1-1, mixed mode, sharing)
+
+[debug] [2022-09-16T03:57:41.674Z] Parsed Java major version: 18
+[info] i  emulators: Starting emulators: functions, firestore {"metadata":{"emulator":{"name":"hub"},"message":"Starting emulators: functions, firestore"}}
+[debug] [2022-09-16T03:57:41.690Z] [hub] writing locator at /var/folders/4b/95hljh855w750qfj39vcmpdr0000gs/T/hub-mbproject-0810.json
+[warn] ⚠  functions: The following emulators are not running, calls to these services from the Functions emulator will affect production: auth, database, hosting, pubsub, storage {"metadata":{"emulator":{"name":"functions"},"message":"The following emulators are not running, calls to these services from the Functions emulator will affect production: \u001b[1mauth, database, hosting, pubsub, storage\u001b[22m"}}
+[info] ✔  functions: Using node@16 from host. {"metadata":{"emulator":{"name":"functions"},"message":"Using node@16 from host."}}
+[debug] [2022-09-16T03:57:41.702Z] defaultcredentials: writing to file /Users/munkhbold/.config/firebase/mbold81_gmail_com_application_default_credentials.json
+[debug] [2022-09-16T03:57:41.704Z] Setting GAC to /Users/munkhbold/.config/firebase/mbold81_gmail_com_application_default_credentials.json {"metadata":{"emulator":{"name":"functions"},"message":"Setting GAC to /Users/munkhbold/.config/firebase/mbold81_gmail_com_application_default_credentials.json"}}
+[debug] [2022-09-16T03:57:41.706Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/mbproject-0810/adminSdkConfig [none]
+[debug] [2022-09-16T03:57:42.284Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/mbproject-0810/adminSdkConfig 200
+[debug] [2022-09-16T03:57:42.284Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/mbproject-0810/adminSdkConfig {"projectId":"mbproject-0810","databaseURL":"https://mbproject-0810-default-rtdb.firebaseio.com","storageBucket":"mbproject-0810.appspot.com","locationId":"us-central"}
+[debug] [2022-09-16T03:57:42.571Z] Ignoring unsupported arg: projectId {"metadata":{"emulator":{"name":"firestore"},"message":"Ignoring unsupported arg: projectId"}}
+[debug] [2022-09-16T03:57:42.571Z] Ignoring unsupported arg: auto_download {"metadata":{"emulator":{"name":"firestore"},"message":"Ignoring unsupported arg: auto_download"}}
+[debug] [2022-09-16T03:57:42.572Z] Starting Firestore Emulator with command {"binary":"java","args":["-Dgoogle.cloud_firestore.debug_log_level=FINE","-Duser.language=en","-jar","/Users/munkhbold/.cache/firebase/emulators/cloud-firestore-emulator-v1.14.3.jar","--host","localhost","--port",8080,"--rules","/Users/munkhbold/Desktop/munkhbold/Leap1-2/test-app/firestore.rules","--functions_emulator","localhost:5001"],"optionalArgs":["port","webchannel_port","host","rules","functions_emulator","seed_from_export"],"joinArgs":false} {"metadata":{"emulator":{"name":"firestore"},"message":"Starting Firestore Emulator with command {\"binary\":\"java\",\"args\":[\"-Dgoogle.cloud_firestore.debug_log_level=FINE\",\"-Duser.language=en\",\"-jar\",\"/Users/munkhbold/.cache/firebase/emulators/cloud-firestore-emulator-v1.14.3.jar\",\"--host\",\"localhost\",\"--port\",8080,\"--rules\",\"/Users/munkhbold/Desktop/munkhbold/Leap1-2/test-app/firestore.rules\",\"--functions_emulator\",\"localhost:5001\"],\"optionalArgs\":[\"port\",\"webchannel_port\",\"host\",\"rules\",\"functions_emulator\",\"seed_from_export\"],\"joinArgs\":false}"}}
+[info] i  firestore: Firestore Emulator logging to firestore-debug.log {"metadata":{"emulator":{"name":"firestore"},"message":"Firestore Emulator logging to \u001b[1mfirestore-debug.log\u001b[22m"}}
+[debug] [2022-09-16T03:57:49.018Z] Sep 16, 2022 11:57:48 AM com.google.cloud.datastore.emulator.firestore.websocket.WebSocketServer start
+INFO: Started WebSocket server on ws://localhost:57821
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Sep 16, 2022 11:57:48 AM com.google.cloud.datastore.emulator.firestore.websocket.WebSocketServer start\nINFO: Started WebSocket server on ws://localhost:57821\n"}}
+[debug] [2022-09-16T03:57:49.043Z] API endpoint: http:// {"metadata":{"emulator":{"name":"firestore"},"message":"API endpoint: http://"}}
+[debug] [2022-09-16T03:57:49.044Z] localhost:8080
+If you are using a library that supports the FIRESTORE_EMULATOR_HOST environment variable, run:
+
+   export FIRESTORE_EMULATOR_HOST=localhost:8080
+
+Dev App Server is now running.
+
+ {"metadata":{"emulator":{"name":"firestore"},"message":"localhost:8080\nIf you are using a library that supports the FIRESTORE_EMULATOR_HOST environment variable, run:\n\n   export FIRESTORE_EMULATOR_HOST=localhost:8080\n\nDev App Server is now running.\n\n"}}
+[warn] ⚠  ui: Emulator UI unable to start on port 4000, starting on 4001 instead. {"metadata":{"emulator":{"name":"ui"},"message":"Emulator UI unable to start on port 4000, starting on 4001 instead."}}
+[debug] [2022-09-16T03:57:49.258Z] Ignoring unsupported arg: auto_download {"metadata":{"emulator":{"name":"ui"},"message":"Ignoring unsupported arg: auto_download"}}
+[debug] [2022-09-16T03:57:49.258Z] Ignoring unsupported arg: port {"metadata":{"emulator":{"name":"ui"},"message":"Ignoring unsupported arg: port"}}
+[debug] [2022-09-16T03:57:49.258Z] Starting Emulator UI with command {"binary":"node","args":["--dns-result-order=ipv4first","/Users/munkhbold/.cache/firebase/emulators/ui-v1.7.0/server.bundle.js"],"optionalArgs":[],"joinArgs":false} {"metadata":{"emulator":{"name":"ui"},"message":"Starting Emulator UI with command {\"binary\":\"node\",\"args\":[\"--dns-result-order=ipv4first\",\"/Users/munkhbold/.cache/firebase/emulators/ui-v1.7.0/server.bundle.js\"],\"optionalArgs\":[],\"joinArgs\":false}"}}
+[info] i  ui: Emulator UI logging to ui-debug.log {"metadata":{"emulator":{"name":"ui"},"message":"Emulator UI logging to \u001b[1mui-debug.log\u001b[22m"}}
+[debug] [2022-09-16T03:57:49.362Z] Web / API server started at localhost:4001
+ {"metadata":{"emulator":{"name":"ui"},"message":"Web / API server started at localhost:4001\n"}}
+[info] i  functions: Watching "/Users/munkhbold/Desktop/munkhbold/Leap1-2/test-app/functions" for Cloud Functions... {"metadata":{"emulator":{"name":"functions"},"message":"Watching \"/Users/munkhbold/Desktop/munkhbold/Leap1-2/test-app/functions\" for Cloud Functions..."}}
+[debug] [2022-09-16T03:57:49.529Z] Validating nodejs source
+[debug] [2022-09-16T03:57:50.127Z] > [functions] package.json contents: {
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
+  "scripts": {
+    "serve": "firebase emulators:start --only functions",
+    "shell": "firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "16"
+  },
+  "main": "index.js",
+  "dependencies": {
+    "firebase-admin": "^10.0.2",
+    "firebase-functions": "^3.18.0"
+  },
+  "devDependencies": {
+    "firebase-functions-test": "^0.2.0"
+  },
+  "private": true
+}
+[debug] [2022-09-16T03:57:50.128Z] Building nodejs source
+[debug] [2022-09-16T03:57:50.128Z] Analyzing nodejs backend spec
+[debug] [2022-09-16T03:57:50.131Z] Could not find functions.yaml. Must use http discovery
+[debug] [2022-09-16T03:57:50.238Z] Serving at port 9005
+
+[debug] [2022-09-16T03:57:50.276Z] Got response from /__/functions.yaml {"endpoints":{"onUserCreate":{"platform":"gcfv1","eventTrigger":{"eventType":"providers/cloud.firestore/eventTypes/document.write","eventFilters":{"resource":"projects/mbproject-0810/databases/(default)/documents/users/{userId}"},"retry":false},"labels":{},"entryPoint":"onUserCreate"}},"specVersion":"v1alpha1","requiredAPIs":[]}
+[debug] [2022-09-16T03:57:50.280Z] shutdown requested via /__/quitquitquit
+
+[debug] [2022-09-16T03:57:50.283Z] addFirestoreTrigger "{\"eventTrigger\":{\"eventType\":\"providers/cloud.firestore/eventTypes/document.write\",\"resource\":\"projects/mbproject-0810/databases/(default)/documents/users/{userId}\",\"service\":\"firestore.googleapis.com\"}}"
+[debug] [2022-09-16T03:57:50.284Z] >>> HTTP REQUEST PUT http://localhost:8080/emulator/v1/projects/mbproject-0810/triggers/us-central1-onUserCreate-0  
+ {"eventTrigger":{"eventType":"providers/cloud.firestore/eventTypes/document.write","resource":"projects/mbproject-0810/databases/(default)/documents/users/{userId}","service":"firestore.googleapis.com"}}
+[debug] [2022-09-16T03:57:50.295Z] Sep 16, 2022 11:57:50 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Sep 16, 2022 11:57:50 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2022-09-16T03:57:50.521Z] Sep 16, 2022 11:57:50 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Sep 16, 2022 11:57:50 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected HTTP/2 connection.\n"}}
+[debug] [2022-09-16T03:57:51.224Z] <<< HTTP RESPONSE 200 {"content-type":"application/json","content-length":"4"}
+[info] ✔  functions[us-central1-onUserCreate]: firestore function initialized. {"metadata":{"emulator":{"name":"functions"},"message":"\u001b[1mfirestore\u001b[22m function initialized."}}
+[info] 
+┌─────────────────────────────────────────────────────────────┐
+│ ✔  All emulators ready! It is now safe to connect your app. │
+│ i  View Emulator UI at http://localhost:4001                │
+└─────────────────────────────────────────────────────────────┘
+
+┌───────────┬────────────────┬─────────────────────────────────┐
+│ Emulator  │ Host:Port      │ View in Emulator UI             │
+├───────────┼────────────────┼─────────────────────────────────┤
+│ Functions │ localhost:5001 │ http://localhost:4001/functions │
+├───────────┼────────────────┼─────────────────────────────────┤
+│ Firestore │ localhost:8080 │ http://localhost:4001/firestore │
+└───────────┴────────────────┴─────────────────────────────────┘
+  Emulator Hub running at localhost:4400
+  Other reserved ports: 4500
+
+Issues? Report them at https://github.com/firebase/firebase-tools/issues and attach the *-debug.log files.
+ 
+[debug] [2022-09-16T03:57:53.256Z] Sep 16, 2022 11:57:53 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Sep 16, 2022 11:57:53 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2022-09-16T03:57:53.432Z] Sep 16, 2022 11:57:53 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Sep 16, 2022 11:57:53 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2022-09-16T03:57:53.687Z] Sep 16, 2022 11:57:53 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Sep 16, 2022 11:57:53 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2022-09-16T03:57:54.385Z] Sep 16, 2022 11:57:54 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Sep 16, 2022 11:57:54 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2022-09-16T03:57:54.454Z] Sep 16, 2022 11:57:54 AM com.google.cloud.datastore.emulator.firestore.websocket.WebSocketChannelHandler initChannel
+INFO: Connected to new websocket client
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Sep 16, 2022 11:57:54 AM com.google.cloud.datastore.emulator.firestore.websocket.WebSocketChannelHandler initChannel\nINFO: Connected to new websocket client\n"}}
+[debug] [2022-09-16T03:57:57.624Z] Sep 16, 2022 11:57:57 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Sep 16, 2022 11:57:57 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2022-09-16T03:57:58.390Z] Sep 16, 2022 11:57:58 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Sep 16, 2022 11:57:58 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2022-09-16T03:58:00.433Z] Sep 16, 2022 11:58:00 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Sep 16, 2022 11:58:00 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2022-09-16T03:58:02.489Z] Sep 16, 2022 11:58:02 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Sep 16, 2022 11:58:02 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2022-09-16T03:58:04.547Z] Sep 16, 2022 11:58:04 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Sep 16, 2022 11:58:04 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2022-09-16T03:58:06.589Z] Sep 16, 2022 11:58:06 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Sep 16, 2022 11:58:06 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2022-09-16T03:58:08.635Z] Sep 16, 2022 11:58:08 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Sep 16, 2022 11:58:08 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2022-09-16T03:58:10.666Z] Sep 16, 2022 11:58:10 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Sep 16, 2022 11:58:10 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2022-09-16T03:58:11.031Z] Sep 16, 2022 11:58:11 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Sep 16, 2022 11:58:11 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2022-09-16T03:58:11.093Z] Sep 16, 2022 11:58:11 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Sep 16, 2022 11:58:11 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2022-09-16T03:58:11.116Z] Sep 16, 2022 11:58:11 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Sep 16, 2022 11:58:11 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2022-09-16T03:58:11.423Z] Sep 16, 2022 11:58:11 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Sep 16, 2022 11:58:11 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2022-09-16T03:58:11.493Z] [work-queue] {"queueLength":1,"workRunningCount":0}
+[debug] [2022-09-16T03:58:11.493Z] [work-queue] {"queueLength":0,"workRunningCount":1}
+[debug] [2022-09-16T03:58:11.493Z] Accepted request POST /functions/projects/mbproject-0810/triggers/us-central1-onUserCreate-0 --> us-central1-onUserCreate-0 {"metadata":{"emulator":{"name":"functions"},"message":"Accepted request POST /functions/projects/mbproject-0810/triggers/us-central1-onUserCreate-0 --> us-central1-onUserCreate-0"}}
+[debug] [2022-09-16T03:58:11.500Z] [worker-pool] addWorker(us-central1-onUserCreate) {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] addWorker(us-central1-onUserCreate)"}}
+[debug] [2022-09-16T03:58:11.501Z] [worker-pool] Adding worker with key us-central1-onUserCreate, total=1 {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] Adding worker with key us-central1-onUserCreate, total=1"}}
+[debug] [2022-09-16T03:58:11.501Z] [worker-pool] submitWork(triggerId=us-central1-onUserCreate) {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] submitWork(triggerId=us-central1-onUserCreate)"}}
+[debug] [2022-09-16T03:58:11.501Z] [worker-us-central1-onUserCreate-bcf54eb1-e3f9-4814-8670-51b5db8b20d7]: Assigning socketPath: /var/folders/4b/95hljh855w750qfj39vcmpdr0000gs/T/fire_emu_56436.sock {"metadata":{"emulator":{"name":"functions"},"message":"[worker-us-central1-onUserCreate-bcf54eb1-e3f9-4814-8670-51b5db8b20d7]: Assigning socketPath: /var/folders/4b/95hljh855w750qfj39vcmpdr0000gs/T/fire_emu_56436.sock"}}
+[debug] [2022-09-16T03:58:11.501Z] [worker-us-central1-onUserCreate-bcf54eb1-e3f9-4814-8670-51b5db8b20d7]: BUSY {"metadata":{"emulator":{"name":"functions"},"message":"[worker-us-central1-onUserCreate-bcf54eb1-e3f9-4814-8670-51b5db8b20d7]: BUSY"}}
+[debug] [2022-09-16T03:58:11.505Z] Sep 16, 2022 11:58:11 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Sep 16, 2022 11:58:11 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2022-09-16T03:58:11.606Z] Sep 16, 2022 11:58:11 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Sep 16, 2022 11:58:11 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2022-09-16T03:58:12.166Z] [runtime-status] [56436] Functions runtime initialized. {"cwd":"/Users/munkhbold/Desktop/munkhbold/Leap1-2/test-app/functions","node_version":"16.16.0"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-onUserCreate"},"extension":{},"message":"[runtime-status] [56436] Functions runtime initialized. {\"cwd\":\"/Users/munkhbold/Desktop/munkhbold/Leap1-2/test-app/functions\",\"node_version\":\"16.16.0\"}"}}
+[debug] [2022-09-16T03:58:12.166Z] [runtime-status] [56436] Disabled runtime features: undefined {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-onUserCreate"},"extension":{},"message":"[runtime-status] [56436] Disabled runtime features: undefined"}}
+[debug] [2022-09-16T03:58:12.167Z] [runtime-status] [56436] Resolved module firebase-admin {"declared":true,"installed":true,"version":"10.3.0","resolution":"/Users/munkhbold/Desktop/munkhbold/Leap1-2/test-app/functions/node_modules/firebase-admin/lib/index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-onUserCreate"},"extension":{},"message":"[runtime-status] [56436] Resolved module firebase-admin {\"declared\":true,\"installed\":true,\"version\":\"10.3.0\",\"resolution\":\"/Users/munkhbold/Desktop/munkhbold/Leap1-2/test-app/functions/node_modules/firebase-admin/lib/index.js\"}"}}
+[debug] [2022-09-16T03:58:12.168Z] [runtime-status] [56436] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.23.0","resolution":"/Users/munkhbold/Desktop/munkhbold/Leap1-2/test-app/functions/node_modules/firebase-functions/lib/index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-onUserCreate"},"extension":{},"message":"[runtime-status] [56436] Resolved module firebase-functions {\"declared\":true,\"installed\":true,\"version\":\"3.23.0\",\"resolution\":\"/Users/munkhbold/Desktop/munkhbold/Leap1-2/test-app/functions/node_modules/firebase-functions/lib/index.js\"}"}}
+[debug] [2022-09-16T03:58:12.168Z] [runtime-status] [56436] Outgoing network have been stubbed. [{"name":"http","status":"mocked"},{"name":"http","status":"mocked"},{"name":"https","status":"mocked"},{"name":"https","status":"mocked"},{"name":"net","status":"mocked"}] {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-onUserCreate"},"extension":{},"message":"[runtime-status] [56436] Outgoing network have been stubbed. [{\"name\":\"http\",\"status\":\"mocked\"},{\"name\":\"http\",\"status\":\"mocked\"},{\"name\":\"https\",\"status\":\"mocked\"},{\"name\":\"https\",\"status\":\"mocked\"},{\"name\":\"net\",\"status\":\"mocked\"}]"}}
+[debug] [2022-09-16T03:58:12.169Z] [runtime-status] [56436] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.23.0","resolution":"/Users/munkhbold/Desktop/munkhbold/Leap1-2/test-app/functions/node_modules/firebase-functions/lib/index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-onUserCreate"},"extension":{},"message":"[runtime-status] [56436] Resolved module firebase-functions {\"declared\":true,\"installed\":true,\"version\":\"3.23.0\",\"resolution\":\"/Users/munkhbold/Desktop/munkhbold/Leap1-2/test-app/functions/node_modules/firebase-functions/lib/index.js\"}"}}
+[debug] [2022-09-16T03:58:12.194Z] [runtime-status] [56436] Checked functions.config() {"config":{}} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-onUserCreate"},"extension":{},"message":"[runtime-status] [56436] Checked functions.config() {\"config\":{}}"}}
+[debug] [2022-09-16T03:58:12.195Z] [runtime-status] [56436] firebase-functions has been stubbed. {"functionsResolution":{"declared":true,"installed":true,"version":"3.23.0","resolution":"/Users/munkhbold/Desktop/munkhbold/Leap1-2/test-app/functions/node_modules/firebase-functions/lib/index.js"}} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-onUserCreate"},"extension":{},"message":"[runtime-status] [56436] firebase-functions has been stubbed. {\"functionsResolution\":{\"declared\":true,\"installed\":true,\"version\":\"3.23.0\",\"resolution\":\"/Users/munkhbold/Desktop/munkhbold/Leap1-2/test-app/functions/node_modules/firebase-functions/lib/index.js\"}}"}}
+[debug] [2022-09-16T03:58:12.195Z] [runtime-status] [56436] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.23.0","resolution":"/Users/munkhbold/Desktop/munkhbold/Leap1-2/test-app/functions/node_modules/firebase-functions/lib/index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-onUserCreate"},"extension":{},"message":"[runtime-status] [56436] Resolved module firebase-functions {\"declared\":true,\"installed\":true,\"version\":\"3.23.0\",\"resolution\":\"/Users/munkhbold/Desktop/munkhbold/Leap1-2/test-app/functions/node_modules/firebase-functions/lib/index.js\"}"}}
+[debug] [2022-09-16T03:58:12.195Z] [runtime-status] [56436] Resolved module firebase-admin {"declared":true,"installed":true,"version":"10.3.0","resolution":"/Users/munkhbold/Desktop/munkhbold/Leap1-2/test-app/functions/node_modules/firebase-admin/lib/index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-onUserCreate"},"extension":{},"message":"[runtime-status] [56436] Resolved module firebase-admin {\"declared\":true,\"installed\":true,\"version\":\"10.3.0\",\"resolution\":\"/Users/munkhbold/Desktop/munkhbold/Leap1-2/test-app/functions/node_modules/firebase-admin/lib/index.js\"}"}}
+[debug] [2022-09-16T03:58:12.195Z] [runtime-status] [56436] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.23.0","resolution":"/Users/munkhbold/Desktop/munkhbold/Leap1-2/test-app/functions/node_modules/firebase-functions/lib/index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-onUserCreate"},"extension":{},"message":"[runtime-status] [56436] Resolved module firebase-functions {\"declared\":true,\"installed\":true,\"version\":\"3.23.0\",\"resolution\":\"/Users/munkhbold/Desktop/munkhbold/Leap1-2/test-app/functions/node_modules/firebase-functions/lib/index.js\"}"}}
+[debug] [2022-09-16T03:58:12.195Z] [runtime-status] [56436] firebase-admin has been stubbed. {"adminResolution":{"declared":true,"installed":true,"version":"10.3.0","resolution":"/Users/munkhbold/Desktop/munkhbold/Leap1-2/test-app/functions/node_modules/firebase-admin/lib/index.js"}} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-onUserCreate"},"extension":{},"message":"[runtime-status] [56436] firebase-admin has been stubbed. {\"adminResolution\":{\"declared\":true,\"installed\":true,\"version\":\"10.3.0\",\"resolution\":\"/Users/munkhbold/Desktop/munkhbold/Leap1-2/test-app/functions/node_modules/firebase-admin/lib/index.js\"}}"}}
+[debug] [2022-09-16T03:58:12.198Z] [runtime-status] [56436] Beginning invocation function onUserCreate! {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-onUserCreate"},"extension":{},"message":"[runtime-status] [56436] Beginning invocation function onUserCreate!"}}
+[info] i  functions: Beginning execution of "onUserCreate" {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-onUserCreate"},"extension":{},"message":"Beginning execution of \"onUserCreate\""}}
+[debug] [2022-09-16T03:58:12.198Z] [runtime-status] [56436] Running onUserCreate in signature event {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-onUserCreate"},"extension":{},"message":"[runtime-status] [56436] Running onUserCreate in signature event"}}
+[debug] [2022-09-16T03:58:12.198Z] [runtime-status] [56436] ProcessBackground {"data":{"value":{"name":"projects/mbproject-0810/databases/(default)/documents/users/0cqLsyjJsc5AswswQj0C","fields":{"email":{"stringValue":"admin@gmail.com"}},"createTime":"2022-09-16T03:58:11.291945Z","updateTime":"2022-09-16T03:58:11.291945Z"},"updateMask":{}},"context":{"eventId":"5b0078ab-c8cc-45b4-92e0-f709dd76973d","timestamp":"2022-09-16T03:58:11.291Z","eventType":"providers/cloud.firestore/eventTypes/document.write","resource":{"name":"projects/mbproject-0810/databases/(default)/documents/users/0cqLsyjJsc5AswswQj0C","service":"firestore.googleapis.com"}}} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-onUserCreate"},"extension":{},"message":"[runtime-status] [56436] ProcessBackground {\"data\":{\"value\":{\"name\":\"projects/mbproject-0810/databases/(default)/documents/users/0cqLsyjJsc5AswswQj0C\",\"fields\":{\"email\":{\"stringValue\":\"admin@gmail.com\"}},\"createTime\":\"2022-09-16T03:58:11.291945Z\",\"updateTime\":\"2022-09-16T03:58:11.291945Z\"},\"updateMask\":{}},\"context\":{\"eventId\":\"5b0078ab-c8cc-45b4-92e0-f709dd76973d\",\"timestamp\":\"2022-09-16T03:58:11.291Z\",\"eventType\":\"providers/cloud.firestore/eventTypes/document.write\",\"resource\":{\"name\":\"projects/mbproject-0810/databases/(default)/documents/users/0cqLsyjJsc5AswswQj0C\",\"service\":\"firestore.googleapis.com\"}}}"}}
+[debug] [2022-09-16T03:58:12.198Z] [runtime-status] [56436] ProcessBackground: lifting resource.name from resource {"name":"projects/mbproject-0810/databases/(default)/documents/users/0cqLsyjJsc5AswswQj0C","service":"firestore.googleapis.com"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-onUserCreate"},"extension":{},"message":"[runtime-status] [56436] ProcessBackground: lifting resource.name from resource {\"name\":\"projects/mbproject-0810/databases/(default)/documents/users/0cqLsyjJsc5AswswQj0C\",\"service\":\"firestore.googleapis.com\"}"}}
+[debug] [2022-09-16T03:58:12.198Z] [runtime-status] [56436] RunBackground {"data":{"value":{"name":"projects/mbproject-0810/databases/(default)/documents/users/0cqLsyjJsc5AswswQj0C","fields":{"email":{"stringValue":"admin@gmail.com"}},"createTime":"2022-09-16T03:58:11.291945Z","updateTime":"2022-09-16T03:58:11.291945Z"},"updateMask":{}},"context":{"eventId":"5b0078ab-c8cc-45b4-92e0-f709dd76973d","timestamp":"2022-09-16T03:58:11.291Z","eventType":"providers/cloud.firestore/eventTypes/document.write","resource":"projects/mbproject-0810/databases/(default)/documents/users/0cqLsyjJsc5AswswQj0C"}} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-onUserCreate"},"extension":{},"message":"[runtime-status] [56436] RunBackground {\"data\":{\"value\":{\"name\":\"projects/mbproject-0810/databases/(default)/documents/users/0cqLsyjJsc5AswswQj0C\",\"fields\":{\"email\":{\"stringValue\":\"admin@gmail.com\"}},\"createTime\":\"2022-09-16T03:58:11.291945Z\",\"updateTime\":\"2022-09-16T03:58:11.291945Z\"},\"updateMask\":{}},\"context\":{\"eventId\":\"5b0078ab-c8cc-45b4-92e0-f709dd76973d\",\"timestamp\":\"2022-09-16T03:58:11.291Z\",\"eventType\":\"providers/cloud.firestore/eventTypes/document.write\",\"resource\":\"projects/mbproject-0810/databases/(default)/documents/users/0cqLsyjJsc5AswswQj0C\"}}"}}
+[debug] [2022-09-16T03:58:12.213Z] [runtime-status] [56436] Ephemeral server survived. {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-onUserCreate"},"extension":{},"message":"[runtime-status] [56436] Ephemeral server survived."}}
+[warn] ⚠  functions: TypeError: snapshot.data is not a function
+    at /Users/munkhbold/Desktop/munkhbold/Leap1-2/test-app/functions/index.js:13:33
+    at cloudFunction (/Users/munkhbold/Desktop/munkhbold/Leap1-2/test-app/functions/node_modules/firebase-functions/lib/cloud-functions.js:78:23)
+    at /usr/local/lib/node_modules/firebase-tools/lib/emulator/functionsEmulatorRuntime.js:577:16
+    at runFunction (/usr/local/lib/node_modules/firebase-tools/lib/emulator/functionsEmulatorRuntime.js:564:15)
+    at runBackground (/usr/local/lib/node_modules/firebase-tools/lib/emulator/functionsEmulatorRuntime.js:576:11)
+    at processBackground (/usr/local/lib/node_modules/firebase-tools/lib/emulator/functionsEmulatorRuntime.js:559:11)
+    at invokeTrigger (/usr/local/lib/node_modules/firebase-tools/lib/emulator/functionsEmulatorRuntime.js:640:19)
+    at handleMessage (/usr/local/lib/node_modules/firebase-tools/lib/emulator/functionsEmulatorRuntime.js:742:15)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5) {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-onUserCreate"},"extension":{},"message":"TypeError: snapshot.data is not a function\n    at /Users/munkhbold/Desktop/munkhbold/Leap1-2/test-app/functions/index.js:13:33\n    at cloudFunction (/Users/munkhbold/Desktop/munkhbold/Leap1-2/test-app/functions/node_modules/firebase-functions/lib/cloud-functions.js:78:23)\n    at /usr/local/lib/node_modules/firebase-tools/lib/emulator/functionsEmulatorRuntime.js:577:16\n    at runFunction (/usr/local/lib/node_modules/firebase-tools/lib/emulator/functionsEmulatorRuntime.js:564:15)\n    at runBackground (/usr/local/lib/node_modules/firebase-tools/lib/emulator/functionsEmulatorRuntime.js:576:11)\n    at processBackground (/usr/local/lib/node_modules/firebase-tools/lib/emulator/functionsEmulatorRuntime.js:559:11)\n    at invokeTrigger (/usr/local/lib/node_modules/firebase-tools/lib/emulator/functionsEmulatorRuntime.js:640:19)\n    at handleMessage (/usr/local/lib/node_modules/firebase-tools/lib/emulator/functionsEmulatorRuntime.js:742:15)\n    at processTicksAndRejections (node:internal/process/task_queues:96:5)"}}
+[warn] ⚠  Your function was killed because it raised an unhandled error. {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-onUserCreate"},"extension":{},"message":"Your function was killed because it raised an unhandled error."}}
+[debug] [2022-09-16T03:58:12.214Z] [work-queue] {"queueLength":0,"workRunningCount":0}
+[debug] [2022-09-16T03:58:12.216Z] [worker-us-central1-onUserCreate-bcf54eb1-e3f9-4814-8670-51b5db8b20d7]: exited {"metadata":{"emulator":{"name":"functions"},"message":"[worker-us-central1-onUserCreate-bcf54eb1-e3f9-4814-8670-51b5db8b20d7]: exited"}}
+[debug] [2022-09-16T03:58:12.217Z] [worker-us-central1-onUserCreate-bcf54eb1-e3f9-4814-8670-51b5db8b20d7]: FINISHED {"metadata":{"emulator":{"name":"functions"},"message":"[worker-us-central1-onUserCreate-bcf54eb1-e3f9-4814-8670-51b5db8b20d7]: FINISHED"}}
+[debug] [2022-09-16T03:58:12.226Z] Sep 16, 2022 11:58:12 AM com.google.cloud.datastore.emulator.impl.events.FunctionsEmulatorEventPublisher sendHttpRequest
+WARNING: Unsuccessful HTTP response when publishing event for projects/mbproject-0810/triggers/us-central1-onUserCreate-0: 500 Internal Server Error
+TypeError: snapshot.data is not a function
+    at /Users/munkhbold/Desktop/munkhbold/Leap1-2/test-app/functions/index.js:13:33
+    at cloudFunction (/Users/munkhbold/Desktop/munkhbold/Leap1-2/test-app/functions/node_modules/firebase-functions/lib/cloud-functions.js:78:23)
+    at /usr/local/lib/node_modules/firebase-tools/lib/emulator/functionsEmulatorRuntime.js:577:16
+    at runFunction (/usr/local/lib/node_modules/firebase-tools/lib/emulator/functionsEmulatorRuntime.js:564:15)
+    at runBackground (/usr/local/lib/node_modules/firebase-tools/lib/emulator/functionsEmulatorRuntime.js:576:11)
+    at processBackground (/usr/local/lib/node_modules/firebase-tools/lib/emulator/functionsEmulatorRuntime.js:559:11)
+    at invokeTrigger (/usr/local/lib/node_modules/firebase-tools/lib/emulator/functionsEmulatorRuntime.js:640:19)
+    at handleMessage (/usr/local/lib/node_modules/firebase-tools/lib/emulator/functionsEmulatorRuntime.js:742:15)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Sep 16, 2022 11:58:12 AM com.google.cloud.datastore.emulator.impl.events.FunctionsEmulatorEventPublisher sendHttpRequest\nWARNING: Unsuccessful HTTP response when publishing event for projects/mbproject-0810/triggers/us-central1-onUserCreate-0: 500 Internal Server Error\nTypeError: snapshot.data is not a function\n    at /Users/munkhbold/Desktop/munkhbold/Leap1-2/test-app/functions/index.js:13:33\n    at cloudFunction (/Users/munkhbold/Desktop/munkhbold/Leap1-2/test-app/functions/node_modules/firebase-functions/lib/cloud-functions.js:78:23)\n    at /usr/local/lib/node_modules/firebase-tools/lib/emulator/functionsEmulatorRuntime.js:577:16\n    at runFunction (/usr/local/lib/node_modules/firebase-tools/lib/emulator/functionsEmulatorRuntime.js:564:15)\n    at runBackground (/usr/local/lib/node_modules/firebase-tools/lib/emulator/functionsEmulatorRuntime.js:576:11)\n    at processBackground (/usr/local/lib/node_modules/firebase-tools/lib/emulator/functionsEmulatorRuntime.js:559:11)\n    at invokeTrigger (/usr/local/lib/node_modules/firebase-tools/lib/emulator/functionsEmulatorRuntime.js:640:19)\n    at handleMessage (/usr/local/lib/node_modules/firebase-tools/lib/emulator/functionsEmulatorRuntime.js:742:15)\n    at processTicksAndRejections (node:internal/process/task_queues:96:5)\n"}}
+[debug] [2022-09-16T03:58:12.699Z] Sep 16, 2022 11:58:12 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Sep 16, 2022 11:58:12 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2022-09-16T03:58:14.679Z] Sep 16, 2022 11:58:14 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Sep 16, 2022 11:58:14 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2022-09-16T03:58:14.682Z] Sep 16, 2022 11:58:14 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Sep 16, 2022 11:58:14 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2022-09-16T03:58:14.740Z] Sep 16, 2022 11:58:14 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Sep 16, 2022 11:58:14 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2022-09-16T03:58:41.353Z] Sep 16, 2022 11:58:41 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Sep 16, 2022 11:58:41 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2022-09-16T03:58:57.678Z] Sep 16, 2022 11:58:57 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Sep 16, 2022 11:58:57 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2022-09-16T03:59:00.298Z] Sep 16, 2022 11:59:00 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Sep 16, 2022 11:59:00 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2022-09-16T03:59:02.329Z] Sep 16, 2022 11:59:02 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Sep 16, 2022 11:59:02 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2022-09-16T03:59:03.355Z] Sep 16, 2022 11:59:03 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Sep 16, 2022 11:59:03 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2022-09-16T03:59:03.413Z] Sep 16, 2022 11:59:03 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Sep 16, 2022 11:59:03 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2022-09-16T03:59:03.437Z] [work-queue] {"queueLength":1,"workRunningCount":0}
+[debug] [2022-09-16T03:59:03.437Z] [work-queue] {"queueLength":0,"workRunningCount":1}
+[debug] [2022-09-16T03:59:03.437Z] Accepted request POST /functions/projects/mbproject-0810/triggers/us-central1-onUserCreate-0 --> us-central1-onUserCreate-0 {"metadata":{"emulator":{"name":"functions"},"message":"Accepted request POST /functions/projects/mbproject-0810/triggers/us-central1-onUserCreate-0 --> us-central1-onUserCreate-0"}}
+[debug] [2022-09-16T03:59:03.437Z] [worker-pool] Cleaned up workers for us-central1-onUserCreate: 1 --> 0 {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] Cleaned up workers for us-central1-onUserCreate: 1 --> 0"}}
+[debug] [2022-09-16T03:59:03.441Z] [worker-pool] addWorker(us-central1-onUserCreate) {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] addWorker(us-central1-onUserCreate)"}}
+[debug] [2022-09-16T03:59:03.441Z] [worker-pool] Adding worker with key us-central1-onUserCreate, total=1 {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] Adding worker with key us-central1-onUserCreate, total=1"}}
+[debug] [2022-09-16T03:59:03.441Z] [worker-pool] submitWork(triggerId=us-central1-onUserCreate) {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] submitWork(triggerId=us-central1-onUserCreate)"}}
+[debug] [2022-09-16T03:59:03.441Z] [worker-us-central1-onUserCreate-8f094923-4e86-4496-bbb5-4667e9f4324c]: Assigning socketPath: /var/folders/4b/95hljh855w750qfj39vcmpdr0000gs/T/fire_emu_56450.sock {"metadata":{"emulator":{"name":"functions"},"message":"[worker-us-central1-onUserCreate-8f094923-4e86-4496-bbb5-4667e9f4324c]: Assigning socketPath: /var/folders/4b/95hljh855w750qfj39vcmpdr0000gs/T/fire_emu_56450.sock"}}
+[debug] [2022-09-16T03:59:03.441Z] [worker-us-central1-onUserCreate-8f094923-4e86-4496-bbb5-4667e9f4324c]: BUSY {"metadata":{"emulator":{"name":"functions"},"message":"[worker-us-central1-onUserCreate-8f094923-4e86-4496-bbb5-4667e9f4324c]: BUSY"}}
+[debug] [2022-09-16T03:59:03.459Z] Sep 16, 2022 11:59:03 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Sep 16, 2022 11:59:03 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2022-09-16T03:59:03.977Z] [runtime-status] [56450] Functions runtime initialized. {"cwd":"/Users/munkhbold/Desktop/munkhbold/Leap1-2/test-app/functions","node_version":"16.16.0"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-onUserCreate"},"extension":{},"message":"[runtime-status] [56450] Functions runtime initialized. {\"cwd\":\"/Users/munkhbold/Desktop/munkhbold/Leap1-2/test-app/functions\",\"node_version\":\"16.16.0\"}"}}
+[debug] [2022-09-16T03:59:03.980Z] [runtime-status] [56450] Disabled runtime features: undefined {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-onUserCreate"},"extension":{},"message":"[runtime-status] [56450] Disabled runtime features: undefined"}}
+[debug] [2022-09-16T03:59:03.981Z] [runtime-status] [56450] Resolved module firebase-admin {"declared":true,"installed":true,"version":"10.3.0","resolution":"/Users/munkhbold/Desktop/munkhbold/Leap1-2/test-app/functions/node_modules/firebase-admin/lib/index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-onUserCreate"},"extension":{},"message":"[runtime-status] [56450] Resolved module firebase-admin {\"declared\":true,\"installed\":true,\"version\":\"10.3.0\",\"resolution\":\"/Users/munkhbold/Desktop/munkhbold/Leap1-2/test-app/functions/node_modules/firebase-admin/lib/index.js\"}"}}
+[debug] [2022-09-16T03:59:03.982Z] [runtime-status] [56450] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.23.0","resolution":"/Users/munkhbold/Desktop/munkhbold/Leap1-2/test-app/functions/node_modules/firebase-functions/lib/index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-onUserCreate"},"extension":{},"message":"[runtime-status] [56450] Resolved module firebase-functions {\"declared\":true,\"installed\":true,\"version\":\"3.23.0\",\"resolution\":\"/Users/munkhbold/Desktop/munkhbold/Leap1-2/test-app/functions/node_modules/firebase-functions/lib/index.js\"}"}}
+[debug] [2022-09-16T03:59:03.982Z] [runtime-status] [56450] Outgoing network have been stubbed. [{"name":"http","status":"mocked"},{"name":"http","status":"mocked"},{"name":"https","status":"mocked"},{"name":"https","status":"mocked"},{"name":"net","status":"mocked"}] {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-onUserCreate"},"extension":{},"message":"[runtime-status] [56450] Outgoing network have been stubbed. [{\"name\":\"http\",\"status\":\"mocked\"},{\"name\":\"http\",\"status\":\"mocked\"},{\"name\":\"https\",\"status\":\"mocked\"},{\"name\":\"https\",\"status\":\"mocked\"},{\"name\":\"net\",\"status\":\"mocked\"}]"}}
+[debug] [2022-09-16T03:59:03.982Z] [runtime-status] [56450] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.23.0","resolution":"/Users/munkhbold/Desktop/munkhbold/Leap1-2/test-app/functions/node_modules/firebase-functions/lib/index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-onUserCreate"},"extension":{},"message":"[runtime-status] [56450] Resolved module firebase-functions {\"declared\":true,\"installed\":true,\"version\":\"3.23.0\",\"resolution\":\"/Users/munkhbold/Desktop/munkhbold/Leap1-2/test-app/functions/node_modules/firebase-functions/lib/index.js\"}"}}
+[debug] [2022-09-16T03:59:04.009Z] [runtime-status] [56450] Checked functions.config() {"config":{}} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-onUserCreate"},"extension":{},"message":"[runtime-status] [56450] Checked functions.config() {\"config\":{}}"}}
+[debug] [2022-09-16T03:59:04.009Z] [runtime-status] [56450] firebase-functions has been stubbed. {"functionsResolution":{"declared":true,"installed":true,"version":"3.23.0","resolution":"/Users/munkhbold/Desktop/munkhbold/Leap1-2/test-app/functions/node_modules/firebase-functions/lib/index.js"}} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-onUserCreate"},"extension":{},"message":"[runtime-status] [56450] firebase-functions has been stubbed. {\"functionsResolution\":{\"declared\":true,\"installed\":true,\"version\":\"3.23.0\",\"resolution\":\"/Users/munkhbold/Desktop/munkhbold/Leap1-2/test-app/functions/node_modules/firebase-functions/lib/index.js\"}}"}}
+[debug] [2022-09-16T03:59:04.009Z] [runtime-status] [56450] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.23.0","resolution":"/Users/munkhbold/Desktop/munkhbold/Leap1-2/test-app/functions/node_modules/firebase-functions/lib/index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-onUserCreate"},"extension":{},"message":"[runtime-status] [56450] Resolved module firebase-functions {\"declared\":true,\"installed\":true,\"version\":\"3.23.0\",\"resolution\":\"/Users/munkhbold/Desktop/munkhbold/Leap1-2/test-app/functions/node_modules/firebase-functions/lib/index.js\"}"}}
+[debug] [2022-09-16T03:59:04.009Z] [runtime-status] [56450] Resolved module firebase-admin {"declared":true,"installed":true,"version":"10.3.0","resolution":"/Users/munkhbold/Desktop/munkhbold/Leap1-2/test-app/functions/node_modules/firebase-admin/lib/index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-onUserCreate"},"extension":{},"message":"[runtime-status] [56450] Resolved module firebase-admin {\"declared\":true,\"installed\":true,\"version\":\"10.3.0\",\"resolution\":\"/Users/munkhbold/Desktop/munkhbold/Leap1-2/test-app/functions/node_modules/firebase-admin/lib/index.js\"}"}}
+[debug] [2022-09-16T03:59:04.010Z] [runtime-status] [56450] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.23.0","resolution":"/Users/munkhbold/Desktop/munkhbold/Leap1-2/test-app/functions/node_modules/firebase-functions/lib/index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-onUserCreate"},"extension":{},"message":"[runtime-status] [56450] Resolved module firebase-functions {\"declared\":true,\"installed\":true,\"version\":\"3.23.0\",\"resolution\":\"/Users/munkhbold/Desktop/munkhbold/Leap1-2/test-app/functions/node_modules/firebase-functions/lib/index.js\"}"}}
+[debug] [2022-09-16T03:59:04.010Z] [runtime-status] [56450] firebase-admin has been stubbed. {"adminResolution":{"declared":true,"installed":true,"version":"10.3.0","resolution":"/Users/munkhbold/Desktop/munkhbold/Leap1-2/test-app/functions/node_modules/firebase-admin/lib/index.js"}} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-onUserCreate"},"extension":{},"message":"[runtime-status] [56450] firebase-admin has been stubbed. {\"adminResolution\":{\"declared\":true,\"installed\":true,\"version\":\"10.3.0\",\"resolution\":\"/Users/munkhbold/Desktop/munkhbold/Leap1-2/test-app/functions/node_modules/firebase-admin/lib/index.js\"}}"}}
+[debug] [2022-09-16T03:59:04.012Z] [runtime-status] [56450] Beginning invocation function onUserCreate! {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-onUserCreate"},"extension":{},"message":"[runtime-status] [56450] Beginning invocation function onUserCreate!"}}
+[info] i  functions: Beginning execution of "onUserCreate" {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-onUserCreate"},"extension":{},"message":"Beginning execution of \"onUserCreate\""}}
+[debug] [2022-09-16T03:59:04.013Z] [runtime-status] [56450] Running onUserCreate in signature event {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-onUserCreate"},"extension":{},"message":"[runtime-status] [56450] Running onUserCreate in signature event"}}
+[debug] [2022-09-16T03:59:04.013Z] [runtime-status] [56450] ProcessBackground {"data":{"value":{"name":"projects/mbproject-0810/databases/(default)/documents/users/0cqLsyjJsc5AswswQj0C","fields":{"email":{"stringValue":"admin2@gmail.com"}},"createTime":"2022-09-16T03:58:11.291945Z","updateTime":"2022-09-16T03:59:03.393945Z"},"oldValue":{"name":"projects/mbproject-0810/databases/(default)/documents/users/0cqLsyjJsc5AswswQj0C","fields":{"email":{"stringValue":"admin@gmail.com"}},"createTime":"2022-09-16T03:58:11.291945Z","updateTime":"2022-09-16T03:58:11.291945Z"},"updateMask":{}},"context":{"eventId":"86f519e2-7e23-440c-b2dc-ce0f70030d68","timestamp":"2022-09-16T03:59:03.393Z","eventType":"providers/cloud.firestore/eventTypes/document.write","resource":{"name":"projects/mbproject-0810/databases/(default)/documents/users/0cqLsyjJsc5AswswQj0C","service":"firestore.googleapis.com"}}} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-onUserCreate"},"extension":{},"message":"[runtime-status] [56450] ProcessBackground {\"data\":{\"value\":{\"name\":\"projects/mbproject-0810/databases/(default)/documents/users/0cqLsyjJsc5AswswQj0C\",\"fields\":{\"email\":{\"stringValue\":\"admin2@gmail.com\"}},\"createTime\":\"2022-09-16T03:58:11.291945Z\",\"updateTime\":\"2022-09-16T03:59:03.393945Z\"},\"oldValue\":{\"name\":\"projects/mbproject-0810/databases/(default)/documents/users/0cqLsyjJsc5AswswQj0C\",\"fields\":{\"email\":{\"stringValue\":\"admin@gmail.com\"}},\"createTime\":\"2022-09-16T03:58:11.291945Z\",\"updateTime\":\"2022-09-16T03:58:11.291945Z\"},\"updateMask\":{}},\"context\":{\"eventId\":\"86f519e2-7e23-440c-b2dc-ce0f70030d68\",\"timestamp\":\"2022-09-16T03:59:03.393Z\",\"eventType\":\"providers/cloud.firestore/eventTypes/document.write\",\"resource\":{\"name\":\"projects/mbproject-0810/databases/(default)/documents/users/0cqLsyjJsc5AswswQj0C\",\"service\":\"firestore.googleapis.com\"}}}"}}
+[debug] [2022-09-16T03:59:04.013Z] [runtime-status] [56450] ProcessBackground: lifting resource.name from resource {"name":"projects/mbproject-0810/databases/(default)/documents/users/0cqLsyjJsc5AswswQj0C","service":"firestore.googleapis.com"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-onUserCreate"},"extension":{},"message":"[runtime-status] [56450] ProcessBackground: lifting resource.name from resource {\"name\":\"projects/mbproject-0810/databases/(default)/documents/users/0cqLsyjJsc5AswswQj0C\",\"service\":\"firestore.googleapis.com\"}"}}
+[debug] [2022-09-16T03:59:04.013Z] [runtime-status] [56450] RunBackground {"data":{"value":{"name":"projects/mbproject-0810/databases/(default)/documents/users/0cqLsyjJsc5AswswQj0C","fields":{"email":{"stringValue":"admin2@gmail.com"}},"createTime":"2022-09-16T03:58:11.291945Z","updateTime":"2022-09-16T03:59:03.393945Z"},"oldValue":{"name":"projects/mbproject-0810/databases/(default)/documents/users/0cqLsyjJsc5AswswQj0C","fields":{"email":{"stringValue":"admin@gmail.com"}},"createTime":"2022-09-16T03:58:11.291945Z","updateTime":"2022-09-16T03:58:11.291945Z"},"updateMask":{}},"context":{"eventId":"86f519e2-7e23-440c-b2dc-ce0f70030d68","timestamp":"2022-09-16T03:59:03.393Z","eventType":"providers/cloud.firestore/eventTypes/document.write","resource":"projects/mbproject-0810/databases/(default)/documents/users/0cqLsyjJsc5AswswQj0C"}} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-onUserCreate"},"extension":{},"message":"[runtime-status] [56450] RunBackground {\"data\":{\"value\":{\"name\":\"projects/mbproject-0810/databases/(default)/documents/users/0cqLsyjJsc5AswswQj0C\",\"fields\":{\"email\":{\"stringValue\":\"admin2@gmail.com\"}},\"createTime\":\"2022-09-16T03:58:11.291945Z\",\"updateTime\":\"2022-09-16T03:59:03.393945Z\"},\"oldValue\":{\"name\":\"projects/mbproject-0810/databases/(default)/documents/users/0cqLsyjJsc5AswswQj0C\",\"fields\":{\"email\":{\"stringValue\":\"admin@gmail.com\"}},\"createTime\":\"2022-09-16T03:58:11.291945Z\",\"updateTime\":\"2022-09-16T03:58:11.291945Z\"},\"updateMask\":{}},\"context\":{\"eventId\":\"86f519e2-7e23-440c-b2dc-ce0f70030d68\",\"timestamp\":\"2022-09-16T03:59:03.393Z\",\"eventType\":\"providers/cloud.firestore/eventTypes/document.write\",\"resource\":\"projects/mbproject-0810/databases/(default)/documents/users/0cqLsyjJsc5AswswQj0C\"}}"}}
+[debug] [2022-09-16T03:59:04.047Z] [runtime-status] [56450] Ephemeral server survived. {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-onUserCreate"},"extension":{},"message":"[runtime-status] [56450] Ephemeral server survived."}}
+[warn] ⚠  functions: TypeError: snapshot.data is not a function
+    at /Users/munkhbold/Desktop/munkhbold/Leap1-2/test-app/functions/index.js:13:33
+    at cloudFunction (/Users/munkhbold/Desktop/munkhbold/Leap1-2/test-app/functions/node_modules/firebase-functions/lib/cloud-functions.js:78:23)
+    at /usr/local/lib/node_modules/firebase-tools/lib/emulator/functionsEmulatorRuntime.js:577:16
+    at runFunction (/usr/local/lib/node_modules/firebase-tools/lib/emulator/functionsEmulatorRuntime.js:564:15)
+    at runBackground (/usr/local/lib/node_modules/firebase-tools/lib/emulator/functionsEmulatorRuntime.js:576:11)
+    at processBackground (/usr/local/lib/node_modules/firebase-tools/lib/emulator/functionsEmulatorRuntime.js:559:11)
+    at invokeTrigger (/usr/local/lib/node_modules/firebase-tools/lib/emulator/functionsEmulatorRuntime.js:640:19)
+    at handleMessage (/usr/local/lib/node_modules/firebase-tools/lib/emulator/functionsEmulatorRuntime.js:742:15)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5) {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-onUserCreate"},"extension":{},"message":"TypeError: snapshot.data is not a function\n    at /Users/munkhbold/Desktop/munkhbold/Leap1-2/test-app/functions/index.js:13:33\n    at cloudFunction (/Users/munkhbold/Desktop/munkhbold/Leap1-2/test-app/functions/node_modules/firebase-functions/lib/cloud-functions.js:78:23)\n    at /usr/local/lib/node_modules/firebase-tools/lib/emulator/functionsEmulatorRuntime.js:577:16\n    at runFunction (/usr/local/lib/node_modules/firebase-tools/lib/emulator/functionsEmulatorRuntime.js:564:15)\n    at runBackground (/usr/local/lib/node_modules/firebase-tools/lib/emulator/functionsEmulatorRuntime.js:576:11)\n    at processBackground (/usr/local/lib/node_modules/firebase-tools/lib/emulator/functionsEmulatorRuntime.js:559:11)\n    at invokeTrigger (/usr/local/lib/node_modules/firebase-tools/lib/emulator/functionsEmulatorRuntime.js:640:19)\n    at handleMessage (/usr/local/lib/node_modules/firebase-tools/lib/emulator/functionsEmulatorRuntime.js:742:15)\n    at processTicksAndRejections (node:internal/process/task_queues:96:5)"}}
+[warn] ⚠  Your function was killed because it raised an unhandled error. {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-onUserCreate"},"extension":{},"message":"Your function was killed because it raised an unhandled error."}}
+[debug] [2022-09-16T03:59:04.047Z] [work-queue] {"queueLength":0,"workRunningCount":0}
+[debug] [2022-09-16T03:59:04.050Z] [worker-us-central1-onUserCreate-8f094923-4e86-4496-bbb5-4667e9f4324c]: exited {"metadata":{"emulator":{"name":"functions"},"message":"[worker-us-central1-onUserCreate-8f094923-4e86-4496-bbb5-4667e9f4324c]: exited"}}
+[debug] [2022-09-16T03:59:04.050Z] [worker-us-central1-onUserCreate-8f094923-4e86-4496-bbb5-4667e9f4324c]: FINISHED {"metadata":{"emulator":{"name":"functions"},"message":"[worker-us-central1-onUserCreate-8f094923-4e86-4496-bbb5-4667e9f4324c]: FINISHED"}}
+[debug] [2022-09-16T03:59:04.051Z] Sep 16, 2022 11:59:04 AM com.google.cloud.datastore.emulator.impl.events.FunctionsEmulatorEventPublisher sendHttpRequest
+WARNING: Unsuccessful HTTP response when publishing event for projects/mbproject-0810/triggers/us-central1-onUserCreate-0: 500 Internal Server Error
+TypeError: snapshot.data is not a function
+    at /Users/munkhbold/Desktop/munkhbold/Leap1-2/test-app/functions/index.js:13:33
+    at cloudFunction (/Users/munkhbold/Desktop/munkhbold/Leap1-2/test-app/functions/node_modules/firebase-functions/lib/cloud-functions.js:78:23)
+    at /usr/local/lib/node_modules/firebase-tools/lib/emulator/functionsEmulatorRuntime.js:577:16
+    at runFunction (/usr/local/lib/node_modules/firebase-tools/lib/emulator/functionsEmulatorRuntime.js:564:15)
+    at runBackground (/usr/local/lib/node_modules/firebase-tools/lib/emulator/functionsEmulatorRuntime.js:576:11)
+    at processBackground (/usr/local/lib/node_modules/firebase-tools/lib/emulator/functionsEmulatorRuntime.js:559:11)
+    at invokeTrigger (/usr/local/lib/node_modules/firebase-tools/lib/emulator/functionsEmulatorRuntime.js:640:19)
+    at handleMessage (/usr/local/lib/node_modules/firebase-tools/lib/emulator/functionsEmulatorRuntime.js:742:15)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Sep 16, 2022 11:59:04 AM com.google.cloud.datastore.emulator.impl.events.FunctionsEmulatorEventPublisher sendHttpRequest\nWARNING: Unsuccessful HTTP response when publishing event for projects/mbproject-0810/triggers/us-central1-onUserCreate-0: 500 Internal Server Error\nTypeError: snapshot.data is not a function\n    at /Users/munkhbold/Desktop/munkhbold/Leap1-2/test-app/functions/index.js:13:33\n    at cloudFunction (/Users/munkhbold/Desktop/munkhbold/Leap1-2/test-app/functions/node_modules/firebase-functions/lib/cloud-functions.js:78:23)\n    at /usr/local/lib/node_modules/firebase-tools/lib/emulator/functionsEmulatorRuntime.js:577:16\n    at runFunction (/usr/local/lib/node_modules/firebase-tools/lib/emulator/functionsEmulatorRuntime.js:564:15)\n    at runBackground (/usr/local/lib/node_modules/firebase-tools/lib/emulator/functionsEmulatorRuntime.js:576:11)\n    at processBackground (/usr/local/lib/node_modules/firebase-tools/lib/emulator/functionsEmulatorRuntime.js:559:11)\n    at invokeTrigger (/usr/local/lib/node_modules/firebase-tools/lib/emulator/functionsEmulatorRuntime.js:640:19)\n    at handleMessage (/usr/local/lib/node_modules/firebase-tools/lib/emulator/functionsEmulatorRuntime.js:742:15)\n    at processTicksAndRejections (node:internal/process/task_queues:96:5)\n"}}
+[debug] [2022-09-16T03:59:04.366Z] Sep 16, 2022 11:59:04 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Sep 16, 2022 11:59:04 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2022-09-16T03:59:31.187Z] Sep 16, 2022 11:59:31 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Sep 16, 2022 11:59:31 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2022-09-16T03:59:33.483Z] Sep 16, 2022 11:59:33 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Sep 16, 2022 11:59:33 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2022-09-16T04:00:03.471Z] Sep 16, 2022 12:00:03 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Sep 16, 2022 12:00:03 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2022-09-16T04:00:03.489Z] Sep 16, 2022 12:00:03 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Sep 16, 2022 12:00:03 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2022-09-16T04:00:04.142Z] Sep 16, 2022 12:00:04 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Sep 16, 2022 12:00:04 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2022-09-16T04:00:04.153Z] Sep 16, 2022 12:00:04 PM com.google.cloud.datastore.emulator.firestore.webchannel.FirestoreV1WebChannelAdapter$FirestoreWriteHandler onClose
+INFO: channel closed
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Sep 16, 2022 12:00:04 PM com.google.cloud.datastore.emulator.firestore.webchannel.FirestoreV1WebChannelAdapter$FirestoreWriteHandler onClose\nINFO: channel closed\n"}}
+[debug] [2022-09-16T04:00:33.530Z] Sep 16, 2022 12:00:33 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Sep 16, 2022 12:00:33 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}

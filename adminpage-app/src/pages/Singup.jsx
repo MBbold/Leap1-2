@@ -1,4 +1,13 @@
-import { Alert, Button, FormControl, FormHelperText, Input, InputLabel, TextField, Typography } from "@mui/material";
+import {
+  Alert,
+  Button,
+  FormControl,
+  FormHelperText,
+  Input,
+  InputLabel,
+  TextField,
+  Typography,
+} from "@mui/material";
 import { Box } from "@mui/system";
 import { useRef, useState } from "react";
 import { Link } from "react-router-dom";
@@ -23,35 +32,34 @@ const styleInput = {
 };
 export const SingUp = () => {
   const [isLogin, setIsLogin] = useState(true);
-  const [error, setError] = useState('');
+  const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
-
 
   const emailRef = useRef();
   const passwordRef = useRef();
   const passwordConfirmRef = useRef();
   const { signUp, currentUser } = useAuth();
 
-  const handleSignUp =(e)=>{
-    e.preventDefault()
-    if(passwordRef.current.value!==passwordConfirmRef.current.value){
-      return setError("Password do not match")
+  const handleSignUp = (e) => {
+    e.preventDefault();
+    if (passwordRef.current.value !== passwordConfirmRef.current.value) {
+      return setError("Password do not match");
     }
-    
-      setError('')
-      // setLoading(true)
-      getSignUp(emailRef.current.value, passwordRef.current.value)
+
+    setError("");
+    // setLoading(true)
+    getSignUp(emailRef.current.value, passwordRef.current.value);
     // catch{
     //   setError("Failed to create an account")
     //   console.log("aldaa")
 
     // }
     // setLoading(false)
-  }
+  };
 
   return (
     <Box sx={{ ...style }}>
-      <Typography variant="h2" sx={{ textAlign: "center",}}>
+      <Typography variant="h2" sx={{ textAlign: "center" }}>
         Sign Up
       </Typography>
       <Box>
@@ -85,11 +93,17 @@ export const SingUp = () => {
           inputRef={passwordConfirmRef}
         />
       </Box>
-      <Button sx={{width:'100%', marginTop:"20px" }} color='secondary' variant="contained" onClick={handleSignUp}>
-        Бүртгүүлэх
+      <Button
+        sx={{ width: "100%", marginTop: "20px" }}
+        color="secondary"
+        variant="contained"
+        onClick={handleSignUp}
+      >
+        Sign Up
       </Button>
-      <Typography sx={{textAlign: "center", marginTop:2}}>Already have an account? <Link to="/">LogIn</Link></Typography>
-
+      <Typography sx={{ textAlign: "center", marginTop: 2 }}>
+        Already have an account? <Link to="/">LogIn</Link>
+      </Typography>
     </Box>
   );
 };
