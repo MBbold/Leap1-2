@@ -13,16 +13,17 @@ import AssignmentOutlinedIcon from "@mui/icons-material/AssignmentOutlined";
 import SignalCellularAltIcon from "@mui/icons-material/SignalCellularAlt";
 import SettingsIcon from "@mui/icons-material/Settings";
 import RestaurantMenuRoundedIcon from "@mui/icons-material/RestaurantMenuRounded";
-import { LogoSvg } from "../component/Logo";
-import { Avatar } from "@mui/material";
-import { Order } from "./Order";
+import { LogoSvg } from "./Logo";
+import { Avatar, Divider } from "@mui/material";
+import { Order } from "../pages/Order";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
-import { FoodMenu } from "./Menu";
-import { Graphic } from "./Graphic";
-import { Configuration } from "./Settings";
+import { FoodMenu } from "../pages/Menu";
+import { Graphic } from "../pages/Graphic";
+import { Configuration } from "../pages/Settings";
 
 const drawerWidth = 258;
-export const NavBar = () => {
+export const Sidebar = () => {
+  
   let menuIcons = [
     <AssignmentOutlinedIcon />,
     <SignalCellularAltIcon />,
@@ -37,37 +38,8 @@ export const NavBar = () => {
   ];
   return (
     // <Router>
-    <Box sx={{ display: "flex" }}>
+    <Box sx={{display:{xs:"none", sm:"flex"}}}>
       <CssBaseline />
-      <AppBar
-        position="fixed"
-        sx={{ width: `calc(100% - ${drawerWidth}px)`, ml: `${drawerWidth}px` }}
-      >
-        <Toolbar
-          sx={{
-            backgroundColor: "white.main",
-            color: "dark.main",
-            display: "flex",
-            justifyContent: "space-between",
-          }}
-        >
-          <Typography
-            variant="h6"
-            noWrap
-            component="div"
-            fontFamily={"Raleway"}
-            fontStyle="normal"
-          >
-            <p style={{ fontFamily: "arial", fontStyle: "" }}>Захиалга</p>
-            Захиалга
-          </Typography>
-          <Typography variant="body1" noWrap component="div">
-            Г.Болд
-          </Typography>
-          <Avatar alt="Remy Sharp" src="" sx={{ width: 24, height: 24 }} />
-        </Toolbar>
-        <Routes></Routes>
-      </AppBar>
       <Drawer
         sx={{
           width: drawerWidth,
@@ -95,7 +67,7 @@ export const NavBar = () => {
         <List sx={{ color: "white.main" }}>
           {sideBarItems.map((text, index) => (
             <ListItem key={text.name} disablePadding>
-              <ListItemButton>
+              <ListItemButton >
                 <ListItemIcon sx={{ color: "white.main" }}>
                   {menuIcons[index]}
                 </ListItemIcon>

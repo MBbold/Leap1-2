@@ -9,6 +9,7 @@ import { Button } from "@mui/material";
 import AddIcon from "@mui/icons-material/Add";
 import { ModelComp } from "../component/ModalComp";
 import { useOpenModalContext } from "../contexts/OpenModal";
+import { usePathNameContext } from "../contexts/PathNameContext";
 
 const Search = styled("div")(({ theme }) => ({
   position: "relative",
@@ -27,6 +28,8 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 }));
 
 export const FoodMenu = () => {
+  const {setPathName} = usePathNameContext();
+  setPathName(window.location.href)
   const { setOpenModal } = useOpenModalContext();
   const handleOpen = () => {
     setOpenModal(true);

@@ -1,10 +1,6 @@
 import {
-  Alert,
+  Avatar,
   Button,
-  FormControl,
-  FormHelperText,
-  Input,
-  InputLabel,
   TextField,
   Typography,
 } from "@mui/material";
@@ -13,28 +9,15 @@ import { useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import { useAuth } from "../contexts/AuthContext";
 import { getSignUp } from "../firebase/firebaseConfig";
-import { NavBar } from "./Navbar";
-
-const style = {
-  width: "30%",
-  height: "auto",
-  margin: "auto",
-  padding: 3,
-  backgroundColor: "#E5E5E5",
-  borderRadius: "10px",
-};
+import LockOutlinedIcon from '@mui/icons-material/LockOutlined'
 const margintop = {
-  margin: "10px 0",
+  marginTop: "10px",
 };
-const styleInput = {
-  borderRadius: "6px",
-  width: "100%",
-};
+
 export const SingUp = () => {
   const [isLogin, setIsLogin] = useState(true);
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
-
   const emailRef = useRef();
   const passwordRef = useRef();
   const passwordConfirmRef = useRef();
@@ -45,65 +28,69 @@ export const SingUp = () => {
     if (passwordRef.current.value !== passwordConfirmRef.current.value) {
       return setError("Password do not match");
     }
-
     setError("");
-    // setLoading(true)
     getSignUp(emailRef.current.value, passwordRef.current.value);
-    // catch{
-    //   setError("Failed to create an account")
-    //   console.log("aldaa")
-
-    // }
-    // setLoading(false)
   };
-
+  const currentURL = window.location.href
+  console.log(currentURL);
   return (
-    <Box sx={{ ...style }}>
-      <Typography variant="h2" sx={{ textAlign: "center" }}>
-        Sign Up
-      </Typography>
-      <Box>
-        {/* {currentUser.email} */}
-        {error && <Alert variant="danger">{error}</Alert>}
-        <Typography sx={{ ...margintop }}>Email</Typography>
-        <TextField
-          sx={{ ...styleInput }}
-          id="outlined-basic"
-          label="Email"
-          variant="outlined"
-          inputRef={emailRef}
-        />
-        <Typography sx={{ ...margintop }}>Password</Typography>
-        <TextField
-          sx={{ ...styleInput }}
-          type="password"
-          id="outlined-basic"
-          label="Password"
-          variant="outlined"
-          inputRef={passwordRef}
-        />
-        <Typography sx={{ ...margintop }}>Password Confirmation</Typography>
-
-        <TextField
-          sx={{ ...styleInput }}
-          type="password"
-          id="outlined-basic"
-          label="Password Confirmation"
-          variant="outlined"
-          inputRef={passwordConfirmRef}
-        />
+    <Box 
+      sx={{
+      marginTop: 8,
+      display: 'flex',
+      flexDirection: 'column',
+      alignItems: 'center',
+    }}>
+      <Avatar sx={{ m: 1, bgcolor: 'adminColor.main' }}>
+        <LockOutlinedIcon />
+      </Avatar>
+      <Typography variant="h5">Sign In</Typography>
+      <Box sx={{width:'30%'}}>
+            <Typography sx={margintop}>Email</Typography>
+            <TextField
+              fullWidth
+              required
+              margin="normal"
+              id="outlined-basic"
+              label="Email"
+              variant="filled"
+              inputRef={emailRef}
+            />
+            <Typography sx={margintop}>Password</Typography>
+            <TextField
+              fullWidth
+              required
+              margin="normal"
+              type="password"
+              id="outlined-basic"
+              label="Password"
+              variant="filled"
+              inputRef={passwordRef}
+            />
+            <Typography sx={margintop}>Password Confirmation</Typography>
+            <TextField
+              fullWidth
+              required
+              margin="normal"
+              type="password"
+              id="outlined-basic"
+              label="Password Confirmation"
+              variant="filled"
+              inputRef={passwordConfirmRef}
+            />
+            <Button
+              sx={{...margintop, backgroundColor:'buttonColor.main' }}
+              fullWidth
+              color="secondary"
+              variant="contained"
+              onClick={handleSignUp}
+            >
+              Sign Up
+            </Button>
+              <Typography sx={{ textAlign: "center", marginTop: 2 }}>
+                Already have an account? <Link to="/">Sign In</Link>
+              </Typography>
       </Box>
-      <Button
-        sx={{ width: "100%", marginTop: "20px" }}
-        color="secondary"
-        variant="contained"
-        onClick={handleSignUp}
-      >
-        Sign Up
-      </Button>
-      <Typography sx={{ textAlign: "center", marginTop: 2 }}>
-        Already have an account? <Link to="/">LogIn</Link>
-      </Typography>
     </Box>
   );
 };

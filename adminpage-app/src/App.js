@@ -6,27 +6,33 @@ import {
 } from "react-router-dom";
 import { AuthProvider } from './contexts/AuthContext';
 import { Graphic } from "./pages/Graphic";
-import { Login } from './pages/Login';
+import { Login } from './pages/SignIn';
 import { FoodMenu } from "./pages/Menu";
-import { NavBar } from "./pages/Navbar";
+import { Sidebar } from "./component/Sidebar";
 import { Order } from "./pages/Order";
 import { Configuration } from "./pages/Settings";
-import { SingUp } from "./pages/Singup";
+import { SingUp } from "./pages/SingUp";
 import { CustomTheme } from './style/theme';
+import { usePathNameContext } from "./contexts/PathNameContext";
+import { useEffect } from "react";
 
 
 
 
 function App() {
+  const {pathName} = usePathNameContext()
 
+
+  console.log(pathName);
   return (
     <Router>
       <AuthProvider>
         <CustomTheme>
-          <NavBar />
+          {/* {pathName ==='http://localhost:3000/' || pathName ==='http://localhost:3000/signup' ? "" : <NavBar/>} */}
           <Routes>
             <Route path='/' element={<Login />} />
             <Route path='/signup' element={<SingUp />} />
+            <Route path='/navbar' element={<Sidebar/>} />
             <Route path="/order" element={<Order />} />
             <Route path="/graphic" element={<Graphic />} />
             <Route path="/configuration" element={<Configuration />} />

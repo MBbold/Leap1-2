@@ -23,11 +23,18 @@ export function CustomTheme({ children }) {
                 main: '#0044ff',
                 // contrastText: '#ffcc00',
             },
+            adminColor:{
+                main:'#000723'
+            },
             addFoodBtn:{
                 main:'#F5F5F7'
             },
             addIcon:{
                 main:'#66B60F'
+            },
+            buttonColor:{
+                main:'#66B60F'
+
             }
         },
         padding:{},
