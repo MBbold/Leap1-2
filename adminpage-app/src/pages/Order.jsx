@@ -8,9 +8,10 @@ import { Sidebar } from '../component/Sidebar';
 import { Box } from '@mui/system';
 import { NavBar } from '../component/NavBar';
 import DehazeIcon from '@mui/icons-material/Dehaze';
-import { Stack } from '@mui/material';
+import { Badge, Divider, Stack } from '@mui/material';
+import ViewInArIcon from '@mui/icons-material/ViewInAr';
 export const Order =()=>{
-const days = [{day:'Даваа', day:'Мягмар', day:'Лхагва', day:'Пүрэв', day:'Баасан', day:'Бямба', day:'Ням'}]
+let days = ['Даваа', 'Мягмар','Лхагва','Пүрэв','Баасан', 'Бямба', 'Ням']
 
     return(
         <div>
@@ -23,11 +24,35 @@ const days = [{day:'Даваа', day:'Мягмар', day:'Лхагва', day:'П
               width:'100%',
             }}>
               <NavBar/>
-              {days?.map((element, index)=>{
-                    // console.log('aa');
-                    console.log(element.day);
-                  })}
-              <Box>
+              <Box sx={{ display:'flex'}}>
+                {days.map((element, index)=>(
+                  <Box >
+                    <Box sx={{display:'flex', gap:25, borderRight:'1px solid #DFE0EB', padding:1, justifyContent:'space-between'}}>
+                      <Typography key={index}>{element}</Typography>
+                      <ViewInArIcon/>
+                    </Box>
+                    <Box sx={{display:'flex', flexDirection:'column', alignItems:'center', height:'500px', backgroundColor:'white.light', borderRight:'1px solid #DFE0EB'}}>
+                    <Divider orientation="vertical" variant="middle" flexItem />
+                        <Accordion sx={{width:'80%'}}>
+                          <AccordionSummary
+                            expandIcon={<ExpandMoreIcon />}
+                            aria-controls="panel1a-content"
+                            id="panel1a-header"
+                          >
+                            <Typography>Accordion 1</Typography>
+                          </AccordionSummary>
+                          <AccordionDetails>
+                            <Typography>
+                              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
+                              malesuada lacus ex, sit amet blandit leo lobortis eget.
+                            </Typography>
+                          </AccordionDetails>
+                        </Accordion>
+                    </Box>
+
+                  </Box>
+                  
+                ))}
               
                 <Stack direction='row' spacing={3}  justifyContent="space-between">
                   
