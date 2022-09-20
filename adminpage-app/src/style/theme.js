@@ -30,7 +30,7 @@ export function CustomTheme({ children }) {
                 main:'#F5F5F7'
             },
             addIcon:{
-                main:'#66B60F'
+                main:'#66B60F',
             },
             buttonColor:{
                 main:'#66B60F'

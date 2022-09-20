@@ -23,7 +23,6 @@ const style = {
   height: 1936,
   bgcolor: "background.paper",
   borderRadius: 4,
-
 };
 const timeSlots = [
   "Цагаан хоол",
@@ -52,20 +51,20 @@ export const ModelComp = () => {
               display: "flex",
               justifyContent: "space-between",
               alignItems: "center",
-              margin: "10px 10px",
+              margin: "10px 20px",
             }}
           >
             <ClearOutlinedIcon />
             <Typography
               fontFamily={"Raleway"}
-              sx={{ fontSize: "15px", fontWeight: "600" }}
+              sx={{ fontSize: "25px", fontWeight: "800" }}
             >
               Хоол нэмэх
             </Typography>
             <Button
               variant="contained"
               sx={{
-                backgroundColor: "white.dark",
+                backgroundColor: "buttonColor.main",
                 color: "white.main",
                 fontSize: 14,
               }}
@@ -97,30 +96,30 @@ export const ModelComp = () => {
               </Button>
             </Stack>
             <Box sx={{ width: "400px" }}>
-              <Typography>Хоолны нэр</Typography>
-              <InputBtn />
-              <Typography>Дэлгэрэнгүй</Typography>
-              <InputBtn sx={{padding: "3px 16px 3px 16px"}}/>
-              <Box sx={{ display: "flex" }}>
-                <Box sx={{ flex: 1 }}>
+              <Box>
+                <Typography>Хоолны нэр</Typography>
+                <InputBtn />
+              </Box>
+              <Box marginTop={2}>
+                <Typography>Дэлгэрэнгүй</Typography>
+                <InputBtn sx={{
+                    border: "1px solid #A0A2A8",
+                    borderRadius: "6px",
+                    padding: "2px 16px 40px 16px",
+                    width: "100%",
+                  }}/>
+              </Box>
+              <Stack
+                direction="row"
+                spacing={3}
+                justifyContent="space-between"
+                marginTop={2}
+              >
+                <Box flex={1}>
                   <Typography>Хоолны үнэ</Typography>
                   <InputBtn />
-                  
-                  {/* <InputBase
-                    placeholder="₮ Энд бичнэ үү"
-                    type="number"
-                    size="medium"
-                    sx={{
-                      border: "1px solid #A0A2A8",
-                      borderRadius: "6px",
-                      padding: "3px 16px 3px 16px",
-                      width: "90%",
-                    }}
-                  >
-                    <Typography>$</Typography>
-                  </InputBase> */}
                 </Box>
-                <Box sx={{ flex: 1 }}>
+                <Box flex={1}>
                   <Typography>Төрөл</Typography>
                   {/* <Autocomplete></Autocomplete> */}
                   <Autocomplete
@@ -133,7 +132,7 @@ export const ModelComp = () => {
                     )}
                   />
                 </Box>
-              </Box>
+              </Stack>
             </Box>
           </Box>
           <Divider />
@@ -172,22 +171,7 @@ export const ModelComp = () => {
                 {/* <MyInput /> */}
               </>
             ))}
-            {/* <Box sx={{flex:1}}>
-                <img src="" alt="" />
-                <Typography>Сармис</Typography>
-                    <InputBase
-                      placeholder="Энд бичнэ үү"
-                      sx={{
-                        border: "1px solid #A0A2A8",
-                        borderRadius: "6px",
-                        padding: "2px 16px 2px 16px",
-                        width:'100%'
-                      }}
-                    ></InputBase>
-              </Box>
-              <Box sx={{flex:1}}>
-              
-              </Box> */}
+            
           </Box>
         </Box>
       </>
