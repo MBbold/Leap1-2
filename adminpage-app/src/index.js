@@ -3,17 +3,17 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import { OpenModalProvider } from './contexts/OpenModal';
 import { PathNameProvider } from './contexts/PathNameContext';
+import { AddFoodOpenModalProvider } from './contexts/AddFoodOpenModal';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <OpenModalProvider>
-      <PathNameProvider>
-        <App />
-      </PathNameProvider>
-    </OpenModalProvider>
+    <AddFoodOpenModalProvider>
+        <PathNameProvider>
+          <App />
+        </PathNameProvider>
+    </AddFoodOpenModalProvider>
   </React.StrictMode>
 );
 

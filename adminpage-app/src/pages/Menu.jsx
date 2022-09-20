@@ -5,8 +5,8 @@ import Typography from "@mui/material/Typography";
 import InputBase from "@mui/material/InputBase";
 import {  Button, Divider, Fab, Grid, Stack,  } from "@mui/material";
 import AddIcon from "@mui/icons-material/Add";
-import { ModelComp } from "../component/ModalComp";
-import { useOpenModalContext } from "../contexts/OpenModal";
+import { AddFoodModalComp, ModelComp } from "../component/AddFoodModalComp";
+import { AddFoodOpenModalProvider, useAddFoodOpenModalContext, useOpenModalContext } from "../contexts/AddFoodOpenModal";
 // import { usePathNameContext } from "../contexts/PathNameContext";
 import { Sidebar } from "../component/Sidebar";
 import { NavBar } from "../component/NavBar";
@@ -31,10 +31,11 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 export const FoodMenu = () => {
   // const { setPathName } = usePathNameContext();
   // setPathName(window.location.href);
-  const { setOpenModal } = useOpenModalContext();
-  const handleOpen = () => {
-    setOpenModal(true);
+  const { setAddFoodOpenModal } = useAddFoodOpenModalContext();
+  const foodAddhandleOpen = () => {
+    setAddFoodOpenModal(true);
   };
+  
   return (
     <Box sx={{ width: "100vw", display: "flex" }}>
       <Sidebar />
@@ -73,7 +74,7 @@ export const FoodMenu = () => {
               />
             </Search>
             <Button
-                  onClick={handleOpen}
+                  onClick={foodAddhandleOpen}
                   variant="contained"
                   startIcon={<AddIcon sx={{ color: "addIcon.main" }} />}
                 >
@@ -110,7 +111,7 @@ export const FoodMenu = () => {
               </Grid>
              ))}
             </Grid>
-            <ModelComp />
+            <AddFoodModalComp />
           </Box>
       </Box>
     </Box>

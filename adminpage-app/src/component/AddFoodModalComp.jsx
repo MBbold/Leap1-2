@@ -3,6 +3,7 @@ import {
   Box,
   Button,
   Divider,
+  Grid,
   Modal,
   Stack,
   TextField,
@@ -13,7 +14,10 @@ import PhotoCamera from "@mui/icons-material/PhotoCamera";
 import { InputBtn } from "./InputBtn";
 import AddIcon from "@mui/icons-material/Add";
 import foodIcons from "../data/foodIcon.json";
-import { useOpenModalContext } from "../contexts/OpenModal";
+import { useAddFoodOpenModalContext } from "../contexts/AddFoodOpenModal";
+import { useState } from "react";
+import { useRef } from "react";
+import _ from 'lodash';
 
 const style = {
   position: "absolute",
@@ -31,15 +35,37 @@ const timeSlots = [
   "Халуун ногоотой",
   "Хүнд хоол",
 ];
-export const ModelComp = () => {
-  const { openModal, setOpenModal } = useOpenModalContext();
-  const handleClose = () => {
-    setOpenModal(false);
+
+
+
+
+export const AddFoodModalComp = () => {
+  const { addFoodOpenModal, setAddFoodOpenModal } = useAddFoodOpenModalContext();
+  const [addRecipeOpenModal, setAddRecipeOpenModal] = useState(false);
+  const foodAddhandleClose = () => {
+    setAddFoodOpenModal(false);
   };
+  const recipeAddhandleOpen = () => {
+    setAddRecipeOpenModal(true);
+  };
+  const recipeAddhandleClose = () => {
+    setAddRecipeOpenModal(false);
+  };
+  const recipeName = useRef();
+  const recipeValue = useRef();
+  const [recipeAddArr, setRecipeAddArr] = useState([]);
+
+  const recipeAdd = ()=>{
+    setRecipeAddArr(()=>
+    [...recipeAddArr, 
+      {name:recipeName.current.value, recipe:recipeValue.current.value}])
+      console.log('recipeAddArr', recipeAddArr);
+  }
+  
   return (
     <Modal
-      open={openModal}
-      onClose={handleClose}
+      open={addFoodOpenModal}
+      onClose={foodAddhandleClose}
       aria-labelledby="parent-modal-title"
       aria-describedby="parent-modal-description"
     >
@@ -145,35 +171,96 @@ export const ModelComp = () => {
               margin: "10px 30px",
             }}
           >
-            <Typography>Орц, найрлага</Typography>
+            <Typography sx={{fontWeight:'600'}}>Орц, найрлага</Typography>
             <Button
+              onClick={recipeAddhandleOpen}
               variant="contained"
-              sx={{ backgroundColor: "addFoodBtn.main", color: "dark.main" }}
+              sx={{ backgroundColor: "addFoodBtn.main", color: "dark.main", fontWeight:'600' }}
               startIcon={<AddIcon sx={{ color: "addIcon.main" }} />}
             >
               Орц нэмэх
             </Button>
           </Box>
-          <Box sx={{ display: "flex" }}>
-            {foodIcons.map((text, index) => (
-              <>
-                <img src={text.img} alt="" />
-                <Typography>{text.name}</Typography>
-                {/* <InputBase
-                  placeholder="Энд бичнэ үү"
-                  sx={{
-                    border: "1px solid #A0A2A8",
-                    borderRadius: "6px",
-                    padding: "2px 16px 2px 16px",
-                    width:'100%'
-                  }}
-                ></InputBase> */}
-                {/* <MyInput /> */}
-              </>
-            ))}
-            
+          <Box>
+            <Grid container spacing={2} columns={8} p={4}>
+              {!_.isEmpty([recipeAddArr]) &&
+                recipeAddArr.map((element, index)=>(
+                  <Grid item xs={4} key={index}>
+                    <Typography>
+                      {element.name}
+                    </Typography>
+                    <Divider/>
+                  </Grid>
+                ))
+              }
+
+              {/* {recipeAddArr.map((element, index)=>(
+                <Grid xs={4} key={index}>
+                  <Box sx={{backgroundColor:'white.main', borderRadius:'8px'}} p={2}></Box>
+                </Grid>
+              ))} */}
+            </Grid>
           </Box>
         </Box>
+
+
+
+
+
+        <Modal
+                open={addRecipeOpenModal}
+                onClose={recipeAddhandleClose}
+                aria-labelledby="parent-modal-title"
+                aria-describedby="parent-modal-description"
+            >
+                <>
+                    <Box sx={{ 
+                      display:'flex',
+                      flexDirection:'column',
+                      position: "absolute",
+                      top: 300,
+                      left: '35%',
+                      width: 500,
+                      bgcolor: "background.paper",
+                      borderRadius: 4,
+                      textAlign:'center',
+                      justifyContent:'center',
+                      alignItems:'center',
+                      gap:3,
+                      p:4
+                     }}>
+                        <Typography
+                            fontFamily={"Raleway"}
+                            sx={{ fontSize: "25px", fontWeight: "800" }}
+                            >
+                            Хоолны орц
+                        </Typography>
+                        <Box sx={{display:'flex', flexDirection:'column', gap:3}}>
+                          <TextField
+                              label='Нэр'
+                              inputRef={recipeName}    
+                          >
+                          </TextField>
+                          <TextField
+                              label='Орц' 
+                              inputRef={recipeValue}    
+                          >
+                          </TextField>
+                          <Button
+                            onClick={recipeAdd}
+                            variant="contained"
+                            fullWidth
+                            sx={{ backgroundColor: "addFoodBtn.main", color: "dark.main", fontWeight:'600' }}
+                            startIcon={<AddIcon sx={{ color: "addIcon.main" }} />}
+                          >
+                            Нэмэх
+                          </Button>
+                        </Box>
+                        
+                    </Box>
+                </>
+               
+        </Modal>
       </>
     </Modal>
   );
