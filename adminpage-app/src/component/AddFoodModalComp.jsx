@@ -61,13 +61,9 @@ export const AddFoodModalComp = () => {
     setRecipeAddArr(()=>
     [...recipeAddArr, 
       {name:recipeName.current.value, recipe:recipeValue.current.value}])
-      console.log('recipeAddArr', recipeAddArr);
   }
   const recipedRemove = (e) =>{
-    console.log("daragdlaa-", e);
-    // const id = e.target.id
-    // console.log('id', id);
-    setRecipeAddArr(recipeAddArr.filter((el, index)=>index !== e))
+    setRecipeAddArr(_.filter(recipeAddArr, (el, index)=>index !== e))
   }
   
   return (
@@ -88,7 +84,9 @@ export const AddFoodModalComp = () => {
               margin: "10px 20px",
             }}
           >
-            <ClearOutlinedIcon />
+            <Button variant="" onClick={foodAddhandleClose}>
+              <ClearOutlinedIcon />
+            </Button>
             <Typography
               fontFamily={"Raleway"}
               sx={{ fontSize: "25px", fontWeight: "800" }}
@@ -192,8 +190,8 @@ export const AddFoodModalComp = () => {
           <Box>
             <Grid container spacing={2} columns={8} p={4}>
               {!_.isEmpty([recipeAddArr]) &&
-                recipeAddArr.map((element, index)=>(
-                  <Grid item xs={4} key={index}>
+              _.map(recipeAddArr,(element, index)=>(
+                <Grid item xs={4} key={index}>
                     <Typography>
                       {element.name}
                     </Typography>
@@ -203,15 +201,96 @@ export const AddFoodModalComp = () => {
                       <Button sx={{width:'50px', height:'30px', backgroundColor:'red.light', borderRadius:'10px'}} onClick={()=>recipedRemove(index)}>
                         <HorizontalRuleIcon fontSize="10px" sx={{color:'red.main'}}/>
                       </Button>
-                      
                     </Box>
-                    {/* <Divider/> */}
                   </Grid>
-                ))
+              ))
               }
-
             </Grid>
           </Box>
+          <Divider/>
+          <Box >
+            <Typography m={4} fontSize={22} fontWeight={600}>
+              Тэжээллэг чанар
+            </Typography>
+            <Box component="label" textAlign='center' m={4} p={4} sx={{backgroundColor:'white.light', borderRadius:'10px', border:'1px solid ', borderStyle:'dashed', 
+                  display:'flex', flexDirection:'column', gap:'20px', alignItems:'center'}}>
+              <input hidden accept="image/*" multiple type="file" />
+              <Typography>
+                Зурагаа чирч оруулж ирж болно
+              </Typography>
+              
+              <Box sx={{display:'flex'}}>
+                {/* <Divider/>
+                <Typography ml={3} mr={3}>Эсвэл</Typography>
+                <Divider/> */}
+                <Divider>CENTER</Divider>
+              </Box>
+              <Button
+                variant="contained"
+                component="label"
+                sx={{
+                  width:'200px',
+                  backgroundColor: "buttonColor.main",
+                  color: "white.main",
+                  fontSize: 14,
+                }}
+              >
+                Файлыг үзэх
+              </Button>
+            </Box>
+            <Stack direction='row' gap={2} m={4}>
+                <TextField label='Линк оруулж болно (Freenutrition, Fastfood...)' size="small" fullWidth></TextField>
+                <Button variant="contained" size="small"
+                  sx={{
+                    width:'200px',
+                    backgroundColor: "white.dark",
+                    color: "white.main",
+                    fontSize: 14,
+                  }}>Оруулах</Button>
+            </Stack>
+          </Box>
+          <Box >
+            <Typography m={4} fontSize={22} fontWeight={600}>
+              Тэжээллэг чанар
+            </Typography>
+            <Box component="label" textAlign='center' margin='auto' m={4} p={4} sx={{backgroundColor:'white.light', borderRadius:'10px', border:'1px solid ', borderStyle:'dashed', 
+                  display:'flex', flexDirection:'column', gap:'20px', alignItems:'center'}}>
+              <Typography>
+                Зурагаа чирч оруулж ирж болно
+              </Typography>
+              
+              <Box sx={{display:'flex'}}>
+                {/* <Divider/>
+                <Typography ml={3} mr={3}>Эсвэл</Typography>
+                <Divider/> */}
+                <Divider>CENTER</Divider>
+              </Box>
+              <Button
+                variant="contained"
+                component="label"
+                sx={{
+                  width:'200px',
+                  backgroundColor: "buttonColor.main",
+                  color: "white.main",
+                  fontSize: 14,
+                }}
+              >
+                Файлыг үзэх
+              </Button>
+              <input hidden accept="image/*" multiple type="file" />
+            </Box>
+            <Stack direction='row' gap={2} m={4}>
+                <TextField label='Линк оруулж болно (Freenutrition, Fastfood...)' size="small" fullWidth></TextField>
+                <Button variant="contained" size="small"
+                  sx={{
+                    width:'200px',
+                    backgroundColor: "white.dark",
+                    color: "white.main",
+                    fontSize: 14,
+                  }}>Оруулах</Button>
+            </Stack>
+          </Box>
+
         </Box>
 
 

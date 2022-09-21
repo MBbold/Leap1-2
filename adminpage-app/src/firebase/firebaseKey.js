@@ -1,10 +1,9 @@
 export const firebaseConfig = {
-    apiKey: "AIzaSyDs3qO03KHEqlHsxZ8pJ2tw_ECZ0XayAHw",
-    authDomain: "mbproject-0810.firebaseapp.com",
-    databaseURL: "https://mbproject-0810-default-rtdb.firebaseio.com",
-    projectId: "mbproject-0810",
-    storageBucket: "mbproject-0810.appspot.com",
-    messagingSenderId: "906173000504",
-    appId: "1:906173000504:web:45f873f57cbdcfbcb0efcd",
-    measurementId: "G-S601Q9EG8L"
+    apiKey: "AIzaSyBQYnHzsDMaDtR7GmP5Pl6XCyfMUgVZFEA",
+    authDomain: "foody-d5be8.firebaseapp.com",
+    projectId: "foody-d5be8",
+    storageBucket: "foody-d5be8.appspot.com",
+    messagingSenderId: "976444991941",
+    appId: "1:976444991941:web:48708ac22633e9cfeb43ac",
+    measurementId: "G-FN44WR9WEQ"
   };
