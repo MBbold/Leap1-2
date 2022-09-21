@@ -67,7 +67,7 @@ export const AddFoodModalComp = () => {
     console.log("daragdlaa-", e);
     // const id = e.target.id
     // console.log('id', id);
-    // setRecipeAddArr(recipeAddArr.filter((e, index)=>index === id))
+    setRecipeAddArr(recipeAddArr.filter((el, index)=>index !== e))
   }
   
   return (
@@ -200,7 +200,7 @@ export const AddFoodModalComp = () => {
                     <Box sx={{display:'flex',  gap:3}} >
                       <TextField size="small"  id="outlined-basic" defaultValue={element.recipe}  disabled variant="outlined" fullWidth>
                       </TextField>
-                      <Button sx={{width:'50px', height:'30px', backgroundColor:'red.light', borderRadius:'10px'}} onClick={recipedRemove}>
+                      <Button sx={{width:'50px', height:'30px', backgroundColor:'red.light', borderRadius:'10px'}} onClick={()=>recipedRemove(index)}>
                         <HorizontalRuleIcon fontSize="10px" sx={{color:'red.main'}}/>
                       </Button>
                       
