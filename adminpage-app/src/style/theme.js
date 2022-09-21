@@ -14,6 +14,10 @@ export function CustomTheme({ children }) {
                 main:'#000',
                 light:'#222'
             },
+            red:{
+                main:'#FF0000',
+                light:'#ffcdd2'
+            },
             primary: {
                 main: '#fff',
                 light: '#fff'

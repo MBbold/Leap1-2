@@ -3,6 +3,7 @@ import {
   Box,
   Button,
   Divider,
+  Fab,
   Grid,
   Modal,
   Stack,
@@ -14,6 +15,7 @@ import PhotoCamera from "@mui/icons-material/PhotoCamera";
 import { InputBtn } from "./InputBtn";
 import AddIcon from "@mui/icons-material/Add";
 import foodIcons from "../data/foodIcon.json";
+import HorizontalRuleIcon from '@mui/icons-material/HorizontalRule';
 import { useAddFoodOpenModalContext } from "../contexts/AddFoodOpenModal";
 import { useState } from "react";
 import { useRef } from "react";
@@ -60,6 +62,12 @@ export const AddFoodModalComp = () => {
     [...recipeAddArr, 
       {name:recipeName.current.value, recipe:recipeValue.current.value}])
       console.log('recipeAddArr', recipeAddArr);
+  }
+  const recipedRemove = (e) =>{
+    console.log("daragdlaa-", e);
+    // const id = e.target.id
+    // console.log('id', id);
+    // setRecipeAddArr(recipeAddArr.filter((e, index)=>index === id))
   }
   
   return (
@@ -189,16 +197,19 @@ export const AddFoodModalComp = () => {
                     <Typography>
                       {element.name}
                     </Typography>
-                    <Divider/>
+                    <Box sx={{display:'flex',  gap:3}} >
+                      <TextField size="small"  id="outlined-basic" defaultValue={element.recipe}  disabled variant="outlined" fullWidth>
+                      </TextField>
+                      <Button sx={{width:'50px', height:'30px', backgroundColor:'red.light', borderRadius:'10px'}} onClick={recipedRemove}>
+                        <HorizontalRuleIcon fontSize="10px" sx={{color:'red.main'}}/>
+                      </Button>
+                      
+                    </Box>
+                    {/* <Divider/> */}
                   </Grid>
                 ))
               }
 
-              {/* {recipeAddArr.map((element, index)=>(
-                <Grid xs={4} key={index}>
-                  <Box sx={{backgroundColor:'white.main', borderRadius:'8px'}} p={2}></Box>
-                </Grid>
-              ))} */}
             </Grid>
           </Box>
         </Box>
