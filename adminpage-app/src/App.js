@@ -13,12 +13,9 @@ import { Order } from "./pages/Order";
 import { Configuration } from "./pages/Settings";
 import { SingUp } from "./pages/SingUp";
 import { CustomTheme } from './style/theme';
-import { usePathNameContext } from "./contexts/PathNameContext";
 import { Layout } from "./pages/Layout";
 
 function App() {
-  const {pathName} = usePathNameContext()
-  console.log(pathName);
   return (
     <Router>
       <AuthProvider>

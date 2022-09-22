@@ -14,7 +14,7 @@ const margintop = {
 };
 
 export const SingUp = () => {
-  const [ setError] = useState("");
+  const [error, setError] = useState("");
   const emailRef = useRef();
   const passwordRef = useRef();
   const passwordConfirmRef = useRef();

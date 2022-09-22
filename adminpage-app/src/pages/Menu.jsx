@@ -10,7 +10,13 @@ import {
   useAddFoodOpenModalContext,
 } from "../contexts/AddFoodOpenModal";
 import { foodDatas } from "../data/foodData";
+import { getFirebaseFoods } from "../firebase/firebaseConfig";
 
+const get = async (doc) =>{
+  const queryData = await getFirebaseFoods();
+  console.log('foodsData', queryData);
+}
+get()
 const Search = styled("div")(({ theme }) => ({
   position: "relative",
   marginLeft: 0,
@@ -75,7 +81,8 @@ export const FoodMenu = () => {
       <Divider />
       <Box sx={{ backgroundColor: "white.light", marginTop: "16px" }}>
         <Grid container spacing={2} columns={20} p={4}>
-          {foodDatas.map((element, index) => (
+          
+          {/* {foodDatas.map((element, index) => (
             <Grid key={index} item xs={4} marginTop={10}>
               <Box
                 sx={{
@@ -123,7 +130,7 @@ export const FoodMenu = () => {
                 </Stack>
               </Box>
             </Grid>
-          ))}
+          ))} */}
         </Grid>
         <AddFoodModalComp />
       </Box>

@@ -18,8 +18,8 @@ const margintop = {
 
 export const Login = () => {
 
-  const [ setError] = useState("");
-  const [ setLoading] = useState(false);
+  const [error,  setError] = useState("");
+  const [loading, setLoading] = useState(false);
   const emailRef = useRef();
   const passwordRef = useRef();
   const navigate = useNavigate();

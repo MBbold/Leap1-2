@@ -18,6 +18,7 @@ import { useAddFoodOpenModalContext } from "../contexts/AddFoodOpenModal";
 import { useState } from "react";
 import { useRef } from "react";
 import _ from 'lodash';
+import { addFirebaseFoods } from "../firebase/firebaseConfig";
 
 const style = {
   position: "absolute",
@@ -51,14 +52,24 @@ export const AddFoodModalComp = () => {
   const recipeAddhandleClose = () => {
     setAddRecipeOpenModal(false);
   };
+
+  const foodName = useRef();
+  const foodPrice = useRef();
+  const foodType = useRef();
+
+  const foodDescription = useRef();
+  const foodPortion = "Порц 1"
+  const foodImage = ''
   const recipeName = useRef();
   const recipeValue = useRef();
   const [recipeAddArr, setRecipeAddArr] = useState([]);
+  const foodRecipe = recipeAddArr;
+
 
   const recipeAdd = ()=>{
     setRecipeAddArr(()=>
     [...recipeAddArr, 
-      {name:recipeName.current.value, recipe:recipeValue.current.value}])
+      {ingredient:recipeName.current.value, amount:recipeValue.current.value}])
   }
   const recipedRemove = (e) =>{
     setRecipeAddArr(_.filter(recipeAddArr, (el, index)=>index !== e))
@@ -98,6 +109,7 @@ export const AddFoodModalComp = () => {
                 color: "white.main",
                 fontSize: 14,
               }}
+              onClick={()=>addFirebaseFoods(foodName.current.value, foodImage, foodPrice.current.value, foodDescription.current.value, foodType.current.value, recipeAddArr)}
             >
               Хадгалах
             </Button>
@@ -128,11 +140,13 @@ export const AddFoodModalComp = () => {
             <Box sx={{ width: "400px" }}>
               <Box>
                 <Typography>Хоолны нэр</Typography>
-                <InputBtn />
+                <InputBtn inputRef={foodName} />
               </Box>
               <Box marginTop={2}>
                 <Typography>Дэлгэрэнгүй</Typography>
-                <InputBtn sx={{
+                <InputBtn 
+                    inputRef={foodDescription}
+                    sx={{
                     border: "1px solid #A0A2A8",
                     borderRadius: "6px",
                     padding: "2px 16px 40px 16px",
@@ -147,7 +161,7 @@ export const AddFoodModalComp = () => {
               >
                 <Box flex={1}>
                   <Typography>Хоолны үнэ</Typography>
-                  <InputBtn />
+                  <InputBtn inputRef={foodPrice}/>
                 </Box>
                 <Box flex={1}>
                   <Typography>Төрөл</Typography>
@@ -158,7 +172,7 @@ export const AddFoodModalComp = () => {
                     options={timeSlots}
                     sx={{ width: "100%" }}
                     renderInput={(params) => (
-                      <TextField {...params} label="Төрөлгүй" />
+                      <TextField inputRef={foodType} {...params} label="Төрөлгүй" />
                     )}
                   />
                 </Box>
@@ -188,13 +202,13 @@ export const AddFoodModalComp = () => {
           <Box>
             <Grid container spacing={2} columns={8} p={4}>
               {!_.isEmpty([recipeAddArr]) &&
-              _.map(recipeAddArr,(element, index)=>(
+              _.map(recipeAddArr,({ingredient, amount}, index)=>(
                 <Grid item xs={4} key={index}>
                     <Typography>
-                      {element.name}
+                      {ingredient}
                     </Typography>
                     <Box sx={{display:'flex',  gap:3}} >
-                      <TextField size="small"  id="outlined-basic" defaultValue={element.recipe}  disabled variant="outlined" fullWidth>
+                      <TextField size="small"  id="outlined-basic" defaultValue={amount}  disabled variant="outlined" fullWidth>
                       </TextField>
                       <Button sx={{width:'50px', height:'30px', backgroundColor:'red.light', borderRadius:'10px'}} onClick={()=>recipedRemove(index)}>
                         <HorizontalRuleIcon fontSize="10px" sx={{color:'red.main'}}/>

@@ -1,13 +1,38 @@
 import { initializeApp } from "firebase/app";
-import { collection, getFirestore} from "firebase/firestore";
-
-import { firebaseConfig } from "./firebaseKey";
+import { firebaseConfig } from "./firebaseKeyAdminPage";
+import {addDoc, arrayUnion, collection, getDocs, getFirestore} from 'firebase/firestore'
 import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, sendSignInLinkToEmail } from "firebase/auth";
 
 const app = initializeApp(firebaseConfig);
-const db = getFirestore(app);
 export const auth = getAuth();
+const db = getFirestore()
+const colRef = collection(db, 'Foods')
+
 export default app
+export const addFirebaseFoods = async (foodName, foodImage, foodPrice, foodDescription, foodType, recipeAddArr)=>{
+    console.log(recipeAddArr);
+    await addDoc(colRef, {
+        name:foodName,
+        image:foodImage,
+        price:foodPrice,
+        description:foodDescription,
+        type:foodType,
+        recipe:arrayUnion(...recipeAddArr)
+        // portion:foodPortion,
+        // recipe:[...foodRecipe]
+        })
+    }
+    
+export const getFirebaseFoods = async () =>{
+    const docData = await collection(db, "Foods");
+    let queryData = await getDocs(docData);
+
+    return queryData;
+}
+
+
+
+
 export const getSignUp = (email, password) => {
     const actionCodesettings = {
         url: 'http://localhost:3000/signup',
@@ -23,9 +48,5 @@ export const getSignUp = (email, password) => {
 }
 export const getLogIn = async (email, password) => {
     return signInWithEmailAndPassword(auth, email, password)
-}
-
-export const addDataFoods =()=>{
-    const docref = collection(db, "Foods");
 }
 
