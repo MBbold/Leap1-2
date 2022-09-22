@@ -7,7 +7,6 @@ import {
 import { Box } from "@mui/system";
 import { useRef, useState } from "react";
 import { Link } from "react-router-dom";
-import { useAuth } from "../contexts/AuthContext";
 import { getSignUp } from "../firebase/firebaseConfig";
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined'
 const margintop = {
@@ -15,13 +14,10 @@ const margintop = {
 };
 
 export const SingUp = () => {
-  const [isLogin, setIsLogin] = useState(true);
-  const [error, setError] = useState("");
-  const [loading, setLoading] = useState(false);
+  const [ setError] = useState("");
   const emailRef = useRef();
   const passwordRef = useRef();
   const passwordConfirmRef = useRef();
-  const { signUp, currentUser } = useAuth();
 
   const handleSignUp = (e) => {
     e.preventDefault();
@@ -88,7 +84,7 @@ export const SingUp = () => {
               Sign Up
             </Button>
               <Typography sx={{ textAlign: "center", marginTop: 2 }}>
-                Already have an account? <Link to="/">Sign In</Link>
+                Already have an account? <Link to="/login">Sign In</Link>
               </Typography>
       </Box>
     </Box>

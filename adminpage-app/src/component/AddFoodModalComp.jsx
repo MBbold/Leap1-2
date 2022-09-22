@@ -3,7 +3,6 @@ import {
   Box,
   Button,
   Divider,
-  Fab,
   Grid,
   Modal,
   Stack,
@@ -14,7 +13,6 @@ import ClearOutlinedIcon from "@mui/icons-material/ClearOutlined";
 import PhotoCamera from "@mui/icons-material/PhotoCamera";
 import { InputBtn } from "./InputBtn";
 import AddIcon from "@mui/icons-material/Add";
-import foodIcons from "../data/foodIcon.json";
 import HorizontalRuleIcon from '@mui/icons-material/HorizontalRule';
 import { useAddFoodOpenModalContext } from "../contexts/AddFoodOpenModal";
 import { useState } from "react";

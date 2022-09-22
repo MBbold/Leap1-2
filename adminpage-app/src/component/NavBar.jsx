@@ -1,10 +1,7 @@
 import * as React from "react";
 import Box from "@mui/material/Box";
-import CssBaseline from "@mui/material/CssBaseline";
-import AppBar from "@mui/material/AppBar";
-import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
-import { Avatar, Badge, Divider, TextField } from "@mui/material";
+import { Avatar, Badge, Divider,  } from "@mui/material";
 import { Stack } from "@mui/system";
 import SearchIcon from '@mui/icons-material/Search';
 import NotificationsActiveIcon from '@mui/icons-material/NotificationsActive';
@@ -13,7 +10,7 @@ export const NavBar = () => {
   
   return (
     <Box >
-      <Stack direction="row" spacing={3}  justifyContent="space-between">
+      <Stack direction="row" spacing={3}  justifyContent="space-between" >
         <Box flex={2} p={2} > Захиалга
           {/* <TextField
             id="date"

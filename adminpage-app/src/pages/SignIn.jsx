@@ -1,5 +1,4 @@
 import {
-  Alert,
   Avatar,
   Button,
   Grid,
@@ -7,26 +6,20 @@ import {
   Typography,
 } from "@mui/material";
 import { Box } from "@mui/system";
-import { useEffect, useRef, useState } from "react";
+import {  useRef, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { getLogIn } from "../firebase/firebaseConfig";
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined'
 import { LogoSignIn } from "../component/LogoSignIn";
-import { usePathNameContext } from "../contexts/PathNameContext";
 // import { CustomTheme } from "../style/theme";
 const margintop = {
   marginTop: "10px",
 };
 
-const currentURL = window.location.href
 export const Login = () => {
-  const {setPathName} = usePathNameContext()
-  useEffect(()=>{
-    setPathName(window.location.href);
-  }, [])
-  const [isLogin, setIsLogin] = useState(true);
-  const [error, setError] = useState("");
-  const [loading, setLoading] = useState(false);
+
+  const [ setError] = useState("");
+  const [ setLoading] = useState(false);
   const emailRef = useRef();
   const passwordRef = useRef();
   const navigate = useNavigate();
