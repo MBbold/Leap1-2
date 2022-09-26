@@ -22,7 +22,7 @@ function App() {
         <CustomTheme>
           {/* {pathName ==='http://localhost:3000/' || pathName ==='http://localhost:3000/signup' ? "" : <NavBar/>} */}
           <Routes>
-              <Route path='/login' element={<Login />} />
+              <Route path='/' element={<Login />} />
               <Route path='/signup' element={<SingUp />} />
             <Route path="/" element={<Layout/>}>
               <Route path='/navbar' element={<Sidebar/>} />

@@ -3,20 +3,15 @@ import { styled } from "@mui/material/styles";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import InputBase from "@mui/material/InputBase";
-import { Button, Divider, Fab, Grid, Stack } from "@mui/material";
+import { Button, CircularProgress, Divider, Fab, Grid, Stack } from "@mui/material";
 import AddIcon from "@mui/icons-material/Add";
-import { AddFoodModalComp} from "../component/AddFoodModalComp";
-import {
-  useAddFoodOpenModalContext,
-} from "../contexts/AddFoodOpenModal";
+import { AddFoodModalComp } from "../component/AddFoodModalComp";
+import { useAddFoodOpenModalContext } from "../contexts/AddFoodOpenModal";
 import { foodDatas } from "../data/foodData";
+import { UseFoodsDataContext } from "../contexts/FoodsDataContext";
 import { getFirebaseFoods } from "../firebase/firebaseConfig";
-
-const get = async (doc) =>{
-  const queryData = await getFirebaseFoods();
-  console.log('foodsData', queryData);
-}
-get()
+import { useEffect } from "react";
+import _ from "lodash";
 const Search = styled("div")(({ theme }) => ({
   position: "relative",
   marginLeft: 0,
@@ -38,7 +33,17 @@ export const FoodMenu = () => {
   const foodAddhandleOpen = () => {
     setAddFoodOpenModal(true);
   };
+  const { foodsData, setFoodsData } = UseFoodsDataContext();
 
+  useEffect(() => {
+    const getData = async () => {
+      const data = await getFirebaseFoods();
+      setFoodsData([...data]);
+    };
+    getData();
+  }, []);
+
+  console.log("foodsData", foodsData);
   return (
     <>
       <Stack direction="row" spacing={3} justifyContent="space-between">
@@ -81,8 +86,10 @@ export const FoodMenu = () => {
       <Divider />
       <Box sx={{ backgroundColor: "white.light", marginTop: "16px" }}>
         <Grid container spacing={2} columns={20} p={4}>
+          {/* {!_.isEmpty([foodsData]) && <CircularProgress color="success"/>} */}
+          {!_.isEmpty([foodsData]) ? 
           
-          {/* {foodDatas.map((element, index) => (
+          _.map(foodsData, (element, index) => (
             <Grid key={index} item xs={4} marginTop={10}>
               <Box
                 sx={{
@@ -130,7 +137,7 @@ export const FoodMenu = () => {
                 </Stack>
               </Box>
             </Grid>
-          ))} */}
+          )): <CircularProgress color="success"/>}
         </Grid>
         <AddFoodModalComp />
       </Box>

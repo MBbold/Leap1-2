@@ -68,29 +68,29 @@
 
 
 
-import React, { useState, useEffect, useMemo } from "react";
-import { Button, Input } from "@mui/material"
-import { CustomTheme } from "./theme";
-import { styled } from '@mui/material/styles'
-import Typography from '@mui/material/Typography'
+// import React, { useState, useEffect, useMemo } from "react";
+// import { Button, Input } from "@mui/material"
+// import { CustomTheme } from "./theme";
+// import { styled } from '@mui/material/styles'
+// import Typography from '@mui/material/Typography'
 
-const App = () => {
-  const [time, setTime] = useState(0);
-  const [isRunning, setIsRunning] = useState(false);
+// const App = () => {
+//   const [time, setTime] = useState(0);
+//   const [isRunning, setIsRunning] = useState(false);
 
-  const logic = (state) => {
-    switch (state) {
-      case "start":
-        setIsRunning(true);
-        break;
-      case "stop":
-        setIsRunning(false);
-        break;
-      default:
-        setIsRunning(false);
-        setTime(0);
-    }
-  };
+//   const logic = (state) => {
+//     switch (state) {
+//       case "start":
+//         setIsRunning(true);
+//         break;
+//       case "stop":
+//         setIsRunning(false);
+//         break;
+//       default:
+//         setIsRunning(false);
+//         setTime(0);
+//     }
+//   };
 
   // useEffect(() => {
   //   if (isRunning) {
@@ -113,59 +113,59 @@ const App = () => {
   //   }
   //   return allPrimes;
   // },[selectedNum])
-  const Mydiv = styled("div")(({ theme }) => ({
-    padding: theme.spacing(1),
-    [theme.breakpoints.down("md")]: {
-      backgroundColor: theme.palette.secondary.light
-    },
-    color: theme.palette.primary,
-    [theme.breakpoints.up("md")]: {
-      backgroundColor: theme.palette.secondary.contrastText,
-    },
-    // [theme.breakpoints.up("dm")]: {
-    //   backgroundColor: theme.palette.secondary,
-    // },
-  }))
+//   const Mydiv = styled("div")(({ theme }) => ({
+//     padding: theme.spacing(1),
+//     [theme.breakpoints.down("md")]: {
+//       backgroundColor: theme.palette.secondary.light
+//     },
+//     color: theme.palette.primary,
+//     [theme.breakpoints.up("md")]: {
+//       backgroundColor: theme.palette.secondary.contrastText,
+//     },
+//     // [theme.breakpoints.up("dm")]: {
+//     //   backgroundColor: theme.palette.secondary,
+//     // },
+//   }))
 
-  return (
-    // <Mydiv>
-      // <CustomTheme sx={{}}>
-      // <Typography>down(md)</Typography>
-      // <Typography>up(md)</Typography>
-      // <Typography>up(lg)</Typography>
-      // </CustomTheme>
+//   return (
+//     // <Mydiv>
+//       // <CustomTheme sx={{}}>
+//       // <Typography>down(md)</Typography>
+//       // <Typography>up(md)</Typography>
+//       // <Typography>up(lg)</Typography>
+//       // </CustomTheme>
 
-    // {/* </Mydiv> */}
-    <CustomTheme>
-        <div>
-          <Button sx={{color:'primary.light', backgroundColor:'secondary.contrastText',}}> Start </Button>
-          {/* <div>
-            <h1>{time}s</h1>
-            <Button color="success" variant="contained" onClick={() => logic("start")}>Start</Button>
-            <Button color="error" variant="outlined" onClick={() => logic("stop")}>Pause</Button>
-            <Button color="warning" variant="contained" onClick={() => logic("reset")}>Reset</Button>
-          </div>
-          <br />
-          <form>
-            <label>Your number:</label>
-            <Input
-            color="secondary"
-              type="number"
-              value={selectedNum}
-              onChange={(event) => {
-                setSelectedNum(event.target.value);
-              }}
-            />
-          </form>
-          <span style={{ fontWeight: "600" }}>
-            There are {memoiValue.length} prime(s) between 1 and {selectedNum}:{" "}
-          </span>
-          <span>{memoiValue.join(", ")}</span> */}
-        </div>
-    </CustomTheme>
+//     // {/* </Mydiv> */}
+//     <CustomTheme>
+//         <div>
+//           <Button sx={{color:'primary.light', backgroundColor:'secondary.contrastText',}}> Start </Button>
+//           {/* <div>
+//             <h1>{time}s</h1>
+//             <Button color="success" variant="contained" onClick={() => logic("start")}>Start</Button>
+//             <Button color="error" variant="outlined" onClick={() => logic("stop")}>Pause</Button>
+//             <Button color="warning" variant="contained" onClick={() => logic("reset")}>Reset</Button>
+//           </div>
+//           <br />
+//           <form>
+//             <label>Your number:</label>
+//             <Input
+//             color="secondary"
+//               type="number"
+//               value={selectedNum}
+//               onChange={(event) => {
+//                 setSelectedNum(event.target.value);
+//               }}
+//             />
+//           </form>
+//           <span style={{ fontWeight: "600" }}>
+//             There are {memoiValue.length} prime(s) between 1 and {selectedNum}:{" "}
+//           </span>
+//           <span>{memoiValue.join(", ")}</span> */}
+//         </div>
+//     </CustomTheme>
 
-  );
-};
+//   );
+// };
 
 
 // const isPrime = (n) => {
@@ -184,5 +184,26 @@ const App = () => {
 
 //   return true;
 // };
+
+import * as React from 'react';
+import { Routes, Route, useParams } from 'react-router-dom';
+
+function ProfilePage() {
+  // Get the userId param from the URL.
+  let { userId } = useParams();
+  <p>{userId}</p>
+  // ...
+}
+
+function App() {
+  return (
+    <Routes>
+      <Route path="users">
+        <Route path=":userId" element={<ProfilePage />} />
+        {/* <Route path="me" element={...} /> */}
+      </Route>
+    </Routes>
+    )}
+  
 
 export default App;

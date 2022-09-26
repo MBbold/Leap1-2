@@ -3,17 +3,23 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import { PathNameProvider } from './contexts/PathNameContext';
+import { PathNameProvider, UserDataProvider, UseUserDataContext } from './contexts/UserDataContext';
 import { AddFoodOpenModalProvider } from './contexts/AddFoodOpenModal';
+import { FoodsDataContextProvider } from './contexts/FoodsDataContext';
+import { IsSignInContextProvider } from './contexts/IsSignInContext';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <AddFoodOpenModalProvider>
-        <PathNameProvider>
-          <App />
-        </PathNameProvider>
-    </AddFoodOpenModalProvider>
+    <UserDataProvider>
+      <IsSignInContextProvider>
+        <AddFoodOpenModalProvider>
+          <FoodsDataContextProvider>
+            <App />
+          </FoodsDataContextProvider>
+        </AddFoodOpenModalProvider>
+      </IsSignInContextProvider>
+    </UserDataProvider>
   </React.StrictMode>
 );
 

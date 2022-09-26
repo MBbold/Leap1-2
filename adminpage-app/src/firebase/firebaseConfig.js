@@ -10,7 +10,7 @@ const colRef = collection(db, 'Foods')
 
 export default app
 export const addFirebaseFoods = async (foodName, foodImage, foodPrice, foodDescription, foodType, recipeAddArr)=>{
-    console.log(recipeAddArr);
+
     await addDoc(colRef, {
         name:foodName,
         image:foodImage,
@@ -22,15 +22,22 @@ export const addFirebaseFoods = async (foodName, foodImage, foodPrice, foodDescr
         // recipe:[...foodRecipe]
         })
     }
+
     
 export const getFirebaseFoods = async () =>{
+    // const {foodsData, setFoodsData} = UseFoodsDataContext();
     const docData = await collection(db, "Foods");
     let queryData = await getDocs(docData);
-
-    return queryData;
+    const item = [];
+      if(queryData){
+        queryData.docs.forEach((doc)=>{
+          item.push(doc.data())
+        })
+        // setFoodsData(item)
+      }
+    return item;
+    
 }
-
-
 
 
 export const getSignUp = (email, password) => {
